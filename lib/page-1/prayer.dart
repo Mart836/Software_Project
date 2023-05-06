@@ -394,6 +394,7 @@ class Prayer extends StatelessWidget {
           ],
         ),
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
         onTap: (int newIndex){
           switch(newIndex){
             case 0:

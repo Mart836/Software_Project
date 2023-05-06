@@ -263,6 +263,7 @@ class Home extends StatelessWidget {
           ],
         ),
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
         onTap: (int newIndex){
           switch(newIndex){
             case 1:
@@ -290,7 +291,7 @@ class Home extends StatelessWidget {
         },
         items: [BottomNavigationBarItem(
           label: "",
-          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          icon: Image.asset('assets/page-1/images/icon-home.png', width: 28 * fem,height: 28 * fem)),
           BottomNavigationBarItem(label: "",
           icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
           BottomNavigationBarItem(label: "",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:myapp/page-1/discover.dart';
 import 'package:myapp/page-1/events.dart';
 import 'package:myapp/page-1/home.dart';
@@ -15,7 +16,7 @@ class More extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-      scrollBehavior: MyCustomScrollBehavior(),
+      //scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
         appBar: AppBar(
         title: Text('More', 
@@ -36,11 +37,11 @@ class More extends StatelessWidget {
             height: 18 * fem,
           )),
           backgroundColor: Colors.white,),
-        body: SingleChildScrollView(
-          child: Container(
+
+          body: Container(
             // moregJA (27:131)
             width: double.infinity,
-            height: 844 * fem,
+            //height: 844 * fem,
 
             decoration: const BoxDecoration(
               color: Color(0xffffffff),
@@ -72,8 +73,8 @@ class More extends StatelessWidget {
                               SizedBox(
                                 // aina1iu4 (64:191)
                                 
-                                width: 80 * fem,
-                                height: 80 * fem,
+                                width: 70 * fem,
+                                height: 70 * fem,
                                 
                                 child: ClipRRect(
                                   borderRadius:
@@ -84,285 +85,56 @@ class More extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Text(
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: 10 * fem),
+                                child: Text(
                                 'Aina Iiyehela',
                                 style: SafeGoogleFont(
                                   'Inter',
-                                  fontSize: 12 * ffem,
+                                  fontSize: 15 * ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2125 * ffem / fem,
                                   color: const Color(0xff000000),
                                 ),
                                 
                               ),
+                              ),
+                              
                             ],
                           )
                           ),
                           
                         ),
-                        SizedBox(
-                          // autogroupst2b8ht (SgK1XJ7i6mp4mfidPPsT2b)
+                        ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemBuilder: (BuildContext context, int index){
                           
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // iconusersFXc (46:86)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 29 * fem, 0 * fem),
-                                width: 24 * fem,
-                                height: 22 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-users.png',
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Members',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroupayjw9WW (SgK1hYKe1DV2kSzFwKaYJw)
-                          
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                // iconbookfjk (44:15)
-                                
-                                width: 16 * fem,
-                                height: 17 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-book.png',
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                ),
-                              ),
-                              TextButton(
-                                // materialsBxz (44:22)
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  ' Materials',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroup42zotsQ (SgK1sTCnmphGMaUao542zo)
-                          
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                // iconlocationoUa (53:119)
-                                
-                                width: 30 * fem,
-                                height: 30 * fem,
-                                child: TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Events()));
-                                  },
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-location.png',
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                  ),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Events',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroupzisdQzA (SgK242jVp6pxi1XX3Azisd)
-                         
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                // iconsettingsMPc (46:98)
-                                
-                                width: 30 * fem,
-                                height: 30 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-settings.png',
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Settings',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          // rectangle19mTL (46:54)
-                          
-                          width: 382 * fem,
-                          height: 0.5 * fem,
-                          decoration: const BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroupupqshbt (SgK2DrnTJFRWij51yNupQs)
-                          
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                // iconcreditcard39x (46:72)
-                                
-                                width: 30 * fem,
-                                height: 30 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-credit-card.png',
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                ),
-                              ),
-                              TextButton(
-                                // paymentsjHg (46:58)
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Payments',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroupmim9UFG (SgK2P2BrWj6bz93uXEMim9)
-                          
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              SizedBox(
-                                // iconheartzDc (46:64)
-                                
-                                width: 30 * fem,
-                                height: 30 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-heart-U5t.png',
-                                  width: 30 * fem,
-                                  height: 300 * fem,
-                                ),
-                              ),
+                          List<String> icons = const <String>['assets/page-1/images/icon-users.png', 'assets/page-1/images/icon-book.png',
+                          'assets/page-1/images/icon-location.png','assets/page-1/images/icon-settings.png',
+                          'assets/page-1/images/icon-credit-card.png', 'assets/page-1/images/icon-heart-U5t.png'];
+                          List<String> items = const <String>['Members', 'Materials', 'Events', 'Payments', 'Support'];
+                          List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
+                          'Sermons, live shows', 'Tithes, donations', 'Contact us, about'];
+                          return ListTile(
+                            leading: Image.asset(icons[index], width: 20, height: 20,),
+                            title: Text(items[index], 
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 14 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2125 * ffem / fem,
+                              color: Colors.black
+                            ),),
+                            subtitle: Text(captions[index],
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 13 * ffem,
+                              height: 1.2125 * ffem / fem,
                               
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Support',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          // rectangle21zsp (53:161)
-                          
-                          width: double.infinity,
-                          height: 1 * fem,
-                          decoration: const BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                        ),
-                        SizedBox(
-                          // autogroupgpjpwYA (SgK2YrEozsh9zrbQTSGpJP)
-                         
-                          width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
-                            ]))                      ],
-                    ),
-                  ),
+                            )),
+                          );},
+                            itemCount: 5
+                            ),
+                        
+              ])),
                 ),
                 
               ],
@@ -371,9 +143,6 @@ class More extends StatelessWidget {
             ),
             
           ),
-          
-        ),
-        
         bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -381,11 +150,12 @@ class More extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
-              spreadRadius: 0.5,
+              spreadRadius: 0.2,
             ),
           ],
         ),
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
         onTap: (int newIndex){
           switch(newIndex){
             case 0:
@@ -421,6 +191,7 @@ class More extends StatelessWidget {
           BottomNavigationBarItem(label: "",
           icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
         ],
+        backgroundColor: Colors.white,
       ),
 
       ),
