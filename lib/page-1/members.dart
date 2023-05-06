@@ -9,9 +9,33 @@ class Members extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Members', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        actions: [
+          Container(
+            margin:const EdgeInsets.symmetric(horizontal:20),
+            child: Image.asset('assets/page-1/images/icon-share.png', width: 18 * fem, height: 18 * fem,)
+          )],
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,  elevation: 0.5),
+        body: Container(
         // memberswZG (64:194)
         padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 38 * fem),
         width: double.infinity,
@@ -29,56 +53,6 @@ class Members extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    // autogroupp4fv8te (SgJqmfCXzVsEW1KV7KP4fV)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 25 * fem, 36 * fem),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // iconarrowleftTvv (71:243)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 11 * fem, 2 * fem),
-                          width: 20 * fem,
-                          height: 19 * fem,
-                          child: TextButton(
-                              // for the back button
-                              onPressed: () => Navigator.pop(context),
-                              child: Image.asset(
-                                'assets/page-1/images/icon-arrow-left-Udc.png',
-                                width: 20 * fem,
-                                height: 19 * fem,
-                              )),
-                        ),
-                        Container(
-                          // membersB6E (71:242)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 181 * fem, 0 * fem),
-                          child: Text(
-                            'Members',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 17 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: const Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          // iconsharery4 (46:110)
-                          width: 25 * fem,
-                          height: 27 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-share.png',
-                            width: 25 * fem,
-                            height: 27 * fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   SizedBox(
                     // autogroupe89zzZU (SgJqzpVGq156FEg2yHe89Z)
                     width: double.infinity,
@@ -580,6 +554,6 @@ class Members extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

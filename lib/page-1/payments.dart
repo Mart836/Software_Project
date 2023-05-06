@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
-  const Scene({super.key});
+class Payments extends StatelessWidget {
+  const Payments({super.key});
 
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Payments', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,  elevation: 0.5),
+        body: Container(
         // paymentsxCv (83:27)
         padding: EdgeInsets.fromLTRB(0 * fem, 38 * fem, 0 * fem, 0 * fem),
         width: double.infinity,
@@ -21,48 +40,7 @@ class Scene extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // autogroupv3zbGDc (SgJf63qHzsG3kpNvcev3zB)
-              margin:
-                  EdgeInsets.fromLTRB(14 * fem, 0 * fem, 263 * fem, 24 * fem),
-              width: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // iconarrowlefttkn (83:36)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                    width: 20 * fem,
-                    height: 19 * fem,
-                    child: Image.asset(
-                      'assets/page-1/images/icon-arrow-left-teS.png',
-                      width: 20 * fem,
-                      height: 19 * fem,
-                    ),
-                  ),
-                  Text(
-                    // paymentsocr (83:35)
-                    'Payments',
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 17 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2125 * ffem / fem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // rectangle23Lcn (83:34)
-              width: double.infinity,
-              height: 0.5 * fem,
-              decoration: const BoxDecoration(
-                color: Color(0xffd9d9d9),
-              ),
-            ),
+            
             Container(
               // autogroup1rzjHnv (SgJfSnjjf8T2VckfV91Rzj)
               padding: EdgeInsets.fromLTRB(
@@ -151,6 +129,7 @@ class Scene extends StatelessWidget {
           ],
         ),
       ),
-    );
+      )
+      );
   }
 }

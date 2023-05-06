@@ -9,9 +9,29 @@ class Materials extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Materials', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,
+           elevation: 0.5),
+        body: Container(
         // materialsgdU (71:296)
         width: double.infinity,
         height: 844 * fem,
@@ -20,43 +40,6 @@ class Materials extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              // autogroupxehq1fk (SgJnuaJc9V83QnRvJMXEHq)
-              left: 13 * fem,
-              top: 51 * fem,
-              child: SizedBox(
-                width: 108 * fem,
-                height: 21 * fem,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      // iconarrowleftJuk (71:298)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                      width: 20 * fem,
-                      height: 19 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-arrow-left-dav.png',
-                        width: 20 * fem,
-                        height: 19 * fem,
-                      ),
-                    ),
-                    Text(
-                      // materialspt6 (71:297)
-                      'Materials',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 17 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2125 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             Positioned(
               // browsewSv (71:307)
               left: 23 * fem,
@@ -492,6 +475,7 @@ class Materials extends StatelessWidget {
           ],
         ),
       ),
+      )
     );
   }
 }

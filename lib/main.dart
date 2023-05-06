@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/more.dart';
 import 'package:myapp/page-1/signin.dart';
 //import 'package:myapp/page-1/more.dart';
 //import 'package:myapp/page-1/signin.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Scaffold(
-        body: Splash(),
+        body: More(),
       ),
     );
   }

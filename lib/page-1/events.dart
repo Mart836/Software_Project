@@ -30,7 +30,8 @@ class Events extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-          backgroundColor: Colors.white,),
+          backgroundColor: Colors.white,
+           elevation: 0.5),
         body: Container(
         // eventsT2n (1:175)
         width: double.infinity,

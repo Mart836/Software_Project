@@ -34,7 +34,7 @@ class Prayer extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-          backgroundColor: Colors.white,),
+          backgroundColor: Colors.white,  elevation: 0.5),
       body: Container(
         // prayerpEz (1:64)
         width: double.infinity,
@@ -389,12 +389,14 @@ class Prayer extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
-              spreadRadius: 0.5,
+              spreadRadius: 0.2,
             ),
           ],
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
         onTap: (int newIndex){
           switch(newIndex){
             case 0:

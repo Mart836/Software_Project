@@ -5,7 +5,11 @@ import 'package:myapp/page-1/events.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/members.dart';
 import 'package:myapp/page-1/prayer.dart';
+import 'package:myapp/page-1/support.dart';
 import 'package:myapp/utils.dart';
+
+import 'materials.dart';
+import 'payments.dart';
 
 class More extends StatelessWidget {
   const More({super.key});
@@ -36,7 +40,7 @@ class More extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-          backgroundColor: Colors.white,),
+          backgroundColor: Colors.white,  elevation: 0.5),
 
           body: Container(
             // moregJA (27:131)
@@ -72,16 +76,17 @@ class More extends StatelessWidget {
                             children: [
                               SizedBox(
                                 // aina1iu4 (64:191)
-                                
                                 width: 70 * fem,
                                 height: 70 * fem,
-                                
                                 child: ClipRRect(
+                                  
                                   borderRadius:
                                       BorderRadius.circular(360 * fem),
+                                      
                                   child: Image.asset(
                                     'assets/page-1/images/aina-1-djU.png',
                                     fit: BoxFit.cover,
+                                    
                                   ),
                                 ),
                               ),
@@ -114,6 +119,36 @@ class More extends StatelessWidget {
                           List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
                           'Sermons, live shows', 'Tithes, donations', 'Contact us, about'];
                           return ListTile(
+                            onTap: (){
+                              switch(index){
+                                case 0:
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Members()));
+                                break;
+                                case 1:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Materials()));
+                                break;
+                                case 2:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Events()));
+                                break;    
+                                case 3:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Payments()));
+                                break;
+                                case 4:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Support()));
+                                break;  
+                              }
+                            },
                             leading: Image.asset(icons[index], width: 20, height: 20,),
                             title: Text(items[index], 
                             style: SafeGoogleFont(
@@ -156,6 +191,8 @@ class More extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
         onTap: (int newIndex){
           switch(newIndex){
             case 0:

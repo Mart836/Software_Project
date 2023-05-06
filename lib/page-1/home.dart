@@ -46,7 +46,8 @@ class Home extends StatelessWidget {
             ),
             ),
             ],
-            backgroundColor: Colors.white,),
+            backgroundColor: Colors.white,
+            elevation: 0.5),
         body: SingleChildScrollView(
             child: Flexible(
           child: Container(
@@ -258,12 +259,14 @@ class Home extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
-              spreadRadius: 0.7,
+              spreadRadius: 0.2,
             ),
           ],
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
         onTap: (int newIndex){
           switch(newIndex){
             case 1:
