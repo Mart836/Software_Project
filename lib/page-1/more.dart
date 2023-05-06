@@ -50,6 +50,7 @@ class More extends StatelessWidget {
                                 
                                 width: 110 * fem,
                                 height: 110 * fem,
+                                
                                 child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(360 * fem),

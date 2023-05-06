@@ -20,6 +20,34 @@ class Home extends StatelessWidget {
     return MaterialApp(
       scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
+        appBar: AppBar(
+        title: Text('BetterYou', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        actions: [
+          Image.asset('assets/page-1/images/icon-bell.png', width: 18 * fem, height: 18 * fem,),
+          
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+            child: SizedBox(
+              width: 50 * fem,
+              height: 50 * fem,
+              child: ClipRRect(
+              borderRadius: BorderRadius.circular(360 * fem),
+              child: Image.asset(
+                'assets/page-1/images/aina-3-Uzi.png',
+                fit: BoxFit.cover,
+              ),
+              ),
+            ),
+            ),
+            ],
+            backgroundColor: Colors.white,),
         body: SingleChildScrollView(
             child: Flexible(
           child: Container(
@@ -28,7 +56,7 @@ class Home extends StatelessWidget {
             height: 870 * fem,
 
             decoration: const BoxDecoration(
-              color: Color(0xffffffff),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
             child: Stack(
               children: [
@@ -326,127 +354,39 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 Stack(
-                  children: [
-                    Positioned(
-                      // rectangle18xv (1:2)
-                      left: 0 * fem,
-                      top: 730 * fem,
-
-                      child: Align(
-                        child: SizedBox(
-                          width: 390 * fem,
-                          height: 80 * fem,
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 255, 255, 252),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // iconhome3a6 (53:122)
-                      left: 29 * fem,
-                      top: 750 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 33 * fem,
-                          height: 29 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-home-gPY.png',
-                            width: 33 * fem,
-                            height: 29 * fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // iconmenuN6a (53:124)
-                      left: 306 * fem,
-                      top: 750 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 30 * fem,
-                          height: 26.14 * fem,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const More()));
-                            },
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Image.asset(
-                              'assets/page-1/images/icon-menu-q3t.png',
-                              width: 30 * fem,
-                              height: 26.14 * fem,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // iconmagnifyingglassFgA (53:126)
-                      left: 207 * fem,
-                      top: 750 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 30 * fem,
-                          height: 30 * fem,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Discover()));
-                            },
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Image.asset(
-                              'assets/page-1/images/icon-magnifying-glass-kWA.png',
-                              width: 30 * fem,
-                              height: 30 * fem,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // iconfireYQN (53:128)
-                      left: 122 * fem,
-                      top: 750 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 30 * fem,
-                          height: 30 * fem,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Prayer()));
-                              },
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Image.asset(
-                                'assets/page-1/images/icon-fire-G9c.png',
-                                width: 30 * fem,
-                                height: 30 * fem,
-                              )),
-                        ),
-                      ),
-                    ),
+                  children: const [
                   ],
                 )
               ],
             ),
           ),
         )),
+        bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.7,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+        onTap: (int newIndex){
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
       ),
-    );
+      ),
+    ));
   }
 }
