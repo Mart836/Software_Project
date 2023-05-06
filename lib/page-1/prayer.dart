@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/discover.dart';
+import 'package:myapp/page-1/more.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
+
+import 'home.dart';
 
 class Prayer extends StatelessWidget {
   const Prayer({super.key});
@@ -10,9 +14,28 @@ class Prayer extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Prayer', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,),
+      body: Container(
         // prayerpEz (1:64)
         width: double.infinity,
         height: 844 * fem,
@@ -21,45 +44,6 @@ class Prayer extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              // autogroupjz1dA3x (SgK7qnFihrmhQCxBMVjZ1d)
-              left: 12 * fem,
-              top: 34 * fem,
-              child: SizedBox(
-                width: 85 * fem,
-                height: 21 * fem,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // iconarrowleftgY6 (56:169)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                      width: 20 * fem,
-                      height: 19 * fem,
-                      child: TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: Image.asset(
-                            'assets/page-1/images/icon-arrow-left-Udc.png',
-                            width: 20 * fem,
-                            height: 19 * fem,
-                          )),
-                    ),
-                    Text(
-                      // prayerPxJ (22:29)
-                      'Prayer',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 17 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2125 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             Positioned(
               // autogroupucewL6r (SgK955YFcfQ3Hc7TbFuCEw)
               left: 0 * fem,
@@ -375,108 +359,6 @@ class Prayer extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      // autogroupxmqxuKc (SgK8nvLWZe3cBWjAVhXmQX)
-                      left: 26 * fem,
-                      top: 713 * fem,
-                      child: SizedBox(
-                        width: 306 * fem,
-                        height: 31 * fem,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // iconhomeyKU (53:135)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 60 * fem, 2 * fem),
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 33 * fem,
-                                  height: 29 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-home-Yce.png',
-                                    width: 33 * fem,
-                                    height: 29 * fem,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // iconfireqsU (53:141)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 60 * fem, 0.96 * fem),
-                              width: 25 * fem,
-                              height: 28.04 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-fire-pdc.png',
-                                width: 25 * fem,
-                                height: 28.04 * fem,
-                              ),
-                            ),
-                            Container(
-                              // iconmagnifyingglassmFL (53:139)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 1 * fem, 68 * fem, 0 * fem),
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-magnifying-glass-8Bx.png',
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // iconmenu3Cr (53:137)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0 * fem, 0.86 * fem),
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 30 * fem,
-                                  height: 26.14 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-menu-raS.png',
-                                    width: 30 * fem,
-                                    height: 26.14 * fem,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // rectangle6Xdp (53:158)
-                      left: 9 * fem,
-                      top: 702 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 390 * fem,
-                          height: 1 * fem,
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color(0xffd9d9d9),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -500,10 +382,42 @@ class Prayer extends StatelessWidget {
           ],
         ),
       ),
-    );
-    bottomNavigationBar: BottomNavigationBar(
-      elevation: 3,
-               onTap: (int newIndex){
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+        onTap: (int newIndex){
+          switch(newIndex){
+            case 0:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Home()));
+              break;
+            case 2:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Discover()));
+            break;
+            case 3:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const More()));
+            break;
+          }
         },
         items: [BottomNavigationBarItem(
           label: "",
@@ -515,6 +429,9 @@ class Prayer extends StatelessWidget {
           BottomNavigationBarItem(label: "",
           icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
         ],
-      );
-  }
+      ),
+
+    )
+    ));
+}
 }

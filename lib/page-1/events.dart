@@ -9,9 +9,29 @@ class Events extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Events', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,),
+        body: Container(
         // eventsT2n (1:175)
         width: double.infinity,
         height: 844 * fem,
@@ -470,7 +490,7 @@ class Events extends StatelessWidget {
       
     )]
     )
-    
+        )
     ));
   }
 }

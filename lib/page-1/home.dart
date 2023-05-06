@@ -51,9 +51,9 @@ class Home extends StatelessWidget {
             child: Flexible(
           child: Container(
             // homejga (0:3)
-            width: double.infinity,
-            height: 800,
-            //constraints: const BoxConstraints.expand(),
+            //width: double.infinity,
+           height:700 * fem,
+            
 
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -264,6 +264,29 @@ class Home extends StatelessWidget {
         ),
         child: BottomNavigationBar(
         onTap: (int newIndex){
+          switch(newIndex){
+            case 1:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Prayer()));
+              break;
+            case 2:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Discover()));
+            break;
+            case 3:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const More()));
+            break;
+          }
         },
         items: [BottomNavigationBarItem(
           label: "",

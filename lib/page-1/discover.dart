@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/more.dart';
+import 'package:myapp/page-1/prayer.dart';
 import 'package:myapp/utils.dart';
+
+import 'home.dart';
 
 class Discover extends StatelessWidget {
   const Discover({super.key});
@@ -9,9 +13,28 @@ class Discover extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar:AppBar(
+        title: Text('Discover', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,),
+      body: Container(
         // discover4ea (43:4)
         padding: EdgeInsets.fromLTRB(13 * fem, 41 * fem, 23 * fem, 44 * fem),
         width: double.infinity,
@@ -21,42 +44,6 @@ class Discover extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              // autogroupdanon4n (SgK5sLYQoMTkAx8tutDAno)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 254 * fem, 27 * fem),
-              width: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    // iconarrowleft7cr (60:179)
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                    width: 20 * fem,
-                    height: 19 * fem,
-                    child: TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Image.asset(
-                          'assets/page-1/images/icon-arrow-left-Udc.png',
-                          width: 20 * fem,
-                          height: 19 * fem,
-                        )),
-                  ),
-                  Text(
-                    // discoverdLJ (60:173)
-                    'Discover',
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 17 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2125 * ffem / fem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Container(
               // autogroup8gl3Ab8 (SgK63AbNHW4JBfgPr68GL3)
               margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 26 * fem),
@@ -284,6 +271,55 @@ class Discover extends StatelessWidget {
           ],
         ),
       ),
-    );
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+        onTap: (int newIndex){
+          switch(newIndex){
+            case 0:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Home()));
+              break;
+            case 1:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Prayer()));
+            break;
+            case 3:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const More()));
+            break;
+          }
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
+      ),
+
+    )));
   }
 }

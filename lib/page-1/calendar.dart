@@ -9,9 +9,28 @@ class Calendar extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Calendar', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,),
+        body: Container(
         // calendarUri (83:1568)
         padding: EdgeInsets.fromLTRB(0 * fem, 44 * fem, 0 * fem, 0 * fem),
         width: double.infinity,
@@ -21,52 +40,7 @@ class Calendar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // autogroupqva7z4N (SgJfwh5F8MvuNsmNpwqva7)
-              margin:
-                  EdgeInsets.fromLTRB(20 * fem, 0 * fem, 268 * fem, 31 * fem),
-              width: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    // iconarrowleftXKC (83:1629)
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                    width: 20 * fem,
-                    height: 19 * fem,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Image.asset(
-                          'assets/page-1/images/icon-arrow-left-DX4.png',
-                          width: 20 * fem,
-                          height: 19 * fem,
-                        )),
-                  ),
-                  Text(
-                    // calendarEjQ (83:1628)
-                    'Calendar',
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 17 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2125 * ffem / fem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // rectangle58nF8 (83:1745)
-              width: double.infinity,
-              height: 0.5 * fem,
-              decoration: const BoxDecoration(
-                color: Color(0xffd9d9d9),
-              ),
-            ),
+            
             Container(
               // autogroupi1v5iPg (SgJgTLtW9iwvbrHXUei1V5)
               padding:
@@ -917,6 +891,7 @@ class Calendar extends StatelessWidget {
           ],
         ),
       ),
+      )
     );
   }
 }

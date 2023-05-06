@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/discover.dart';
 import 'package:myapp/page-1/events.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/members.dart';
+import 'package:myapp/page-1/prayer.dart';
 import 'package:myapp/utils.dart';
 
 class More extends StatelessWidget {
@@ -15,6 +17,25 @@ class More extends StatelessWidget {
     return MaterialApp(
       scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
+        appBar: AppBar(
+        title: Text('More', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,),
         body: SingleChildScrollView(
           child: Container(
             // moregJA (27:131)
@@ -29,7 +50,7 @@ class More extends StatelessWidget {
                 Positioned(
                   // autogroupjkbmzpe (SgK2yfrnZd2aotHdZajkbM)
                   left: 0 * fem,
-                  top: 78 * fem,
+                  top: 0 * fem,
                   child: Container(
                     padding: EdgeInsets.fromLTRB(
                         0 * fem, 11 * fem, 0 * fem, 20.86 * fem),
@@ -40,16 +61,19 @@ class More extends StatelessWidget {
                       children: [
                         SizedBox(
                           // autogroup8mqfCA2 (SgK1LJS2eCbxTAwZXa8mQf)
-                          
                           width: double.infinity,
+                          // autogroup8mqfCA2 (SgK1LJS2eCbxTAwZXa8mQf)
+                          child: Padding(
+                            //padding: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10,),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBox(
                                 // aina1iu4 (64:191)
                                 
-                                width: 110 * fem,
-                                height: 110 * fem,
+                                width: 80 * fem,
+                                height: 80 * fem,
                                 
                                 child: ClipRRect(
                                   borderRadius:
@@ -69,9 +93,12 @@ class More extends StatelessWidget {
                                   height: 1.2125 * ffem / fem,
                                   color: const Color(0xff000000),
                                 ),
+                                
                               ),
                             ],
+                          )
                           ),
+                          
                         ),
                         SizedBox(
                           // autogroupst2b8ht (SgK1XJ7i6mp4mfidPPsT2b)
@@ -332,135 +359,73 @@ class More extends StatelessWidget {
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              SizedBox(
-                                  // autogrouprws7fUA (SgK2j1cYcrkSPDvD5pRWS7)
-                                  
-                                  width: 33 * fem,
-                                  height: 29 * fem,
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Home()));
-                                    },
-                                    child: Image.asset(
-                                      'assets/page-1/images/auto-group-rws7.png',
-                                      width: 33 * fem,
-                                      height: 29 * fem,
-                                    ),
-                                  )),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 25 * fem,
-                                  height: 28.04 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-fire.png',
-                                    width: 25 * fem,
-                                    height: 28.04 * fem,
-                                  ),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 30 * fem,
-                                  height: 30 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-magnifying-glass-ybk.png',
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                // iconmenukP8 (22:15)
-                                width: 30 * fem,
-                                height: 26.14 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-menu-qZg.png',
-                                  width: 30 * fem,
-                                  height: 26.14 * fem,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                            children: const [
+                            ]))                      ],
                     ),
                   ),
                 ),
-                Positioned(
-                  // autogroupwt5ygGn (SgK19UQjkYdDKW49WqWt5y)
-                  left: 19 * fem,
-                  top: 38 * fem,
-                  child: SizedBox(
-                    width: 71 * fem,
-                    height: 21 * fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          // iconarrowleft1K4 (46:113)
-                          
-                          width: 20 * fem,
-                          height: 19 * fem,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Image.asset(
-                                'assets/page-1/images/icon-arrow-left-DX4.png',
-                                width: 30 * fem,
-                                height: 30 * fem,
-                              )),
-                        ),
-                        Text(
-                          // morevB8 (53:132)
-                          'More',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 14 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // rectangle14f8i (53:164)
-                  left: 0 * fem,
-                  top: 77.5 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 390 * fem,
-                      height: 0.5 * fem,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Color(0xffd9d9d9),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                
               ],
+              
+              
             ),
+            
           ),
+          
         ),
+        
+        bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+        onTap: (int newIndex){
+          switch(newIndex){
+            case 0:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Home()));
+              break;
+            case 1:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Prayer()));
+            break;
+            case 2:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Discover()));
+            break;
+          }
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
       ),
-      //width: double.infinity,
-    );
+
+      ),
+
+      
+    ));
   }
 }
