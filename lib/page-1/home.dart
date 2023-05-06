@@ -18,7 +18,6 @@ class Home extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-      scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
         appBar: AppBar(
         title: Text('BetterYou', 
@@ -30,7 +29,7 @@ class Home extends StatelessWidget {
           color:const Color(0xff000000),
         )),
         actions: [
-          Image.asset('assets/page-1/images/icon-bell.png', width: 18 * fem, height: 18 * fem,),
+          Image.asset('assets/page-1/images/icon-bell.png', width: 20 * fem, height: 20 * fem,),
           
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
@@ -53,7 +52,8 @@ class Home extends StatelessWidget {
           child: Container(
             // homejga (0:3)
             width: double.infinity,
-            height: 870 * fem,
+            height: 800,
+            //constraints: const BoxConstraints.expand(),
 
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -61,33 +61,9 @@ class Home extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                  // autogroupdaifUPG (SgKB376b6sdaYoCcR9daif)
-                  left: 0 * fem,
-                  top: 76 * fem,
-                  child: Container(
-                    width: 390 * fem,
-                    height: 1 * fem,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                    child: Center(
-                      // rectangle7zsQ (27:134)
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 1 * fem,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
                   // autogroupkj7hKug (SgKBmvCaxjrTX15Jvpkj7h)
                   left: 0 * fem,
-                  top: 77 * fem,
+                  top: 0 * fem,
                   child: Container(
                     padding: EdgeInsets.fromLTRB(
                         0 * fem, 14 * fem, 0 * fem, 0 * fem),
@@ -266,97 +242,11 @@ class Home extends StatelessWidget {
                             ),
                           )),
                         ),
-                        SizedBox(
-                          // user3qS6 (62:189)
-                          width: 3 * fem,
-                          height: 2 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/user-3.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                        
                       ],
                     )),
                   ),
                 ),
-                Positioned(
-                  // autogroupdqfmyoC (SgKAfnNnTQ8pf7D65rdQfm)
-                  left: 25 * fem,
-                  top: 16 * fem,
-                  child: SizedBox(
-                    width: 336 * fem,
-                    height: 50 * fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // autogrouprgxs5bL (SgKAtH1y2ERDf312ZURGxs)
-                          padding: EdgeInsets.fromLTRB(
-                              0 * fem, 15 * fem, 9 * fem, 14 * fem),
-                          height: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'BetterYou',
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: 17 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2125 * ffem / fem,
-                                  color: const Color(0xff000000),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const Notifications()));
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 20 * fem,
-                                  height: 20 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-bell.png',
-                                    width: 20 * fem,
-                                    height: 20 * fem,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        TextButton(
-                          // aina3qD8 (64:193)
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: SizedBox(
-                            width: 50 * fem,
-                            height: 50 * fem,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(360 * fem),
-                              child: Image.asset(
-                                'assets/page-1/images/aina-3-Uzi.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Stack(
-                  children: const [
-                  ],
-                )
               ],
             ),
           ),
