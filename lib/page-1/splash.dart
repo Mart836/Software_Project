@@ -7,7 +7,7 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const signIn()));
     });
@@ -34,8 +34,7 @@ class Splash extends StatelessWidget {
             children: [
               Container(
                 // autogroupfrvvZDp (SgKMfy3QjMwEiMwuSrfRVV)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 276 * fem),
+                
                 width: double.infinity,
                 height: 100 * fem,
                 decoration: BoxDecoration(
@@ -59,46 +58,6 @@ class Splash extends StatelessWidget {
                       height: 1.2125 * ffem / fem,
                       color: const Color(0xffffffff),
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                // fromgroup2nMU (71:323)
-                constraints: BoxConstraints(
-                  maxWidth: 42 * fem,
-                ),
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 17 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2102272931 * ffem / fem,
-                      color: const Color(0xff000000),
-                    ),
-                    children: [
-                      TextSpan(
-                        text: 'From\n',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff7d7a7a),
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Group2',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ),

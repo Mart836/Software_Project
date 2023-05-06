@@ -117,107 +117,70 @@ class signIn extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+              TextField(
                 // emailaddressXCA (83:1980)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 254 * fem, 10 * fem),
-                child: Text(
-                  'Email address',
+                
+                obscureText: false,
+                  decoration: InputDecoration(labelText: 'Email address',
+                  prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
+                    child: Image.asset('assets/page-1/images/icon-envelope-closed.png',
+                    width: 16 * fem,
+                    height: 16 * fem,),),
+                  //hintText: "Enter your email address",
+                  border: OutlineInputBorder(
+                    borderRadius:BorderRadius.circular(10 * fem)),
+                  ),
                   style: SafeGoogleFont(
                     'Inter',
-                    fontSize: 12 * ffem,
+                    fontSize: 14 * ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2125 * ffem / fem,
                     color: const Color(0xff000000),
                   ),
-                ),
               ),
-              Container(
-                // autogroupwexbrES (SgKGn7CPdVGnfNS1GWwExB)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 3 * fem, 14 * fem),
-                padding: EdgeInsets.fromLTRB(
-                    17 * fem, 15 * fem, 17 * fem, 16.01 * fem),
-                width: 348 * fem,
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xff7d7a7a)),
-                  color: const Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Align(
-                  // iconenvelopeclosed8Bx (83:2013)
-                  alignment: Alignment.centerLeft,
-                  child: SizedBox(
-                    width: 17 * fem,
-                    height: 13.99 * fem,
-                    child: Container(
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 297 * fem, 0 * fem),
-                      child: Image.asset(
-                        'assets/page-1/images/icon-envelope-closed-KtJ.png',
-                        width: 17 * fem,
-                        height: 13.99 * fem,
-                      ),
-                    ),
-                  ),
-                ),
+              
+              SizedBox(
+                height: 15 * fem,
               ),
-              Container(
+
+              TextField(
                 // passwordRwk (83:1988)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 253 * fem, 9 * fem),
-                child: Text(
-                  'Password',
-                  style: SafeGoogleFont(
+                
+                obscureText: true,
+                decoration: InputDecoration(
+                  
+                  labelText: "Password",
+                
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10 * fem)),
+                    borderSide: const BorderSide(color: Colors.grey,),
+                    ),
+                    prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
+                    child: Image.asset('assets/page-1/images/icon-lock-locked.png',
+                    width: 16 * fem,
+                    height: 16 * fem,),),
+                    suffixIcon: Padding(padding: const EdgeInsets.all(15.0),
+                    child: Image.asset('assets/page-1/images/icon-eye.png',
+                    width: 16 * fem,
+                    height: 16 * fem,),),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10 * fem)),
+                      borderSide: const BorderSide(color: Colors.blue),
+                    ),
+                    
+                    ),
+                    style: SafeGoogleFont(
                     'Inter',
-                    fontSize: 12 * ffem,
+                    fontSize: 14 * ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2125 * ffem / fem,
                     color: const Color(0xff000000),
                   ),
-                ),
+                  
               ),
-              Container(
-                // autogroupcjp9MqQ (SgKGxSEWpPZSEZeTjzCjP9)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 10 * fem),
-                padding:
-                    EdgeInsets.fromLTRB(17 * fem, 13 * fem, 17 * fem, 14 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xff7d7a7a)),
-                  color: const Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // iconlocklockedEeJ (83:2016)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 282 * fem, 0 * fem),
-                      width: 16 * fem,
-                      height: 18 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-lock-locked-Yez.png',
-                        width: 16 * fem,
-                        height: 18 * fem,
-                      ),
-                    ),
-                    Container(
-                      // iconeyeAH4 (83:2009)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                      width: 19 * fem,
-                      height: 15 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-eye.png',
-                        width: 19 * fem,
-                        height: 15 * fem,
-                      ),
-                    ),
-                  ],
-                ),
+              
+              SizedBox(
+                height: 15 * fem,
               ),
               Container(
                 // forgotpassword598 (127:102)
@@ -267,19 +230,14 @@ class signIn extends StatelessWidget {
                     child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      // donthaveanaccountoUS (83:1997)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 23 * fem, 0 * fem),
-                      child: Text(
-                        'Don’t  have an account?',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff51515b),
-                        ),
+                    Text(
+                      'Don’t  have an account?',
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 14 * ffem,
+                        fontWeight: FontWeight.w600,
+                        height: 1.2125 * ffem / fem,
+                        color: const Color(0xff51515b),
                       ),
                     ),
                     TextButton(

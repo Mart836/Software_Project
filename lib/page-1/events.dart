@@ -49,10 +49,9 @@ class Events extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Container(
+                                SizedBox(
                                   // iconarrowleftcri (83:15)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 2 * fem, 8 * fem, 0 * fem),
+                                  
                                   width: 20 * fem,
                                   height: 19 * fem,
                                   child: TextButton(
@@ -63,28 +62,22 @@ class Events extends StatelessWidget {
                                         height: 19 * fem,
                                       )),
                                 ),
-                                Container(
+                                SizedBox(
                                   // autogroupkswy7Hg (SgJcT3Puhu72pQu5k7kswy)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 0 * fem, 140 * fem, 0 * fem),
+                                  
                                   height: double.infinity,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Container(
-                                        // satapr29Sar (23:63)
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 0 * fem, 5 * fem),
-                                        child: Text(
-                                          'Sat, APR 29',
-                                          style: SafeGoogleFont(
-                                            'Inter',
-                                            fontSize: 12 * ffem,
-                                            fontWeight: FontWeight.w600,
-                                            height: 1.2125 * ffem / fem,
-                                            color: const Color(0xff7d7a7a),
-                                          ),
+                                      Text(
+                                        'Sat, APR 29',
+                                        style: SafeGoogleFont(
+                                          'Inter',
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w600,
+                                          height: 1.2125 * ffem / fem,
+                                          color: const Color(0xff7d7a7a),
                                         ),
                                       ),
                                       Text(
@@ -101,23 +94,18 @@ class Events extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  // iconcalendarsRG (23:62)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 7 * fem, 0 * fem, 0 * fem),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    style: TextButton.styleFrom(
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: SizedBox(
+                                TextButton(
+                                  onPressed: () {},
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: SizedBox(
+                                    width: 23 * fem,
+                                    height: 26 * fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/icon-calendar.png',
                                       width: 23 * fem,
                                       height: 26 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/icon-calendar.png',
-                                        width: 23 * fem,
-                                        height: 26 * fem,
-                                      ),
                                     ),
                                   ),
                                 ),
@@ -147,8 +135,7 @@ class Events extends StatelessWidget {
                     ),
                     Container(
                       // autogroupgav1qmQ (SgJcwMv4BvH8YnJ1d7gaV1)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 0 * fem, 26 * fem),
+                     
                       padding: EdgeInsets.fromLTRB(
                           11 * fem, 11 * fem, 31 * fem, 12 * fem),
                       width: double.infinity,
@@ -161,19 +148,15 @@ class Events extends StatelessWidget {
                         children: [
                           Center(
                             // searchiKQ (83:1564)
-                            child: Container(
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 1 * fem, 224 * fem, 0 * fem),
-                              child: Text(
-                                'Search',
-                                textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: 14 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2125 * ffem / fem,
-                                  color: const Color(0xff7d7a7a),
-                                ),
+                            child: Text(
+                              'Search',
+                              textAlign: TextAlign.center,
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 14 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2125 * ffem / fem,
+                                color: const Color(0xff7d7a7a),
                               ),
                             ),
                           ),
@@ -192,8 +175,7 @@ class Events extends StatelessWidget {
                     ),
                     Container(
                       // group7K4J (64:208)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 0 * fem, 30 * fem),
+                     
                       padding: EdgeInsets.fromLTRB(
                           31 * fem, 13 * fem, 17 * fem, 12 * fem),
                       decoration: BoxDecoration(
@@ -481,115 +463,14 @@ class Events extends StatelessWidget {
                 height: 31.14 * fem,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Container(
-                      // iconhome3pA (53:145)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 0.14 * fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 33 * fem,
-                          height: 29 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-home-cvi.png',
-                            width: 33 * fem,
-                            height: 29 * fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 60 * fem,
-                    ),
-                    Container(
-                      // iconfireJVC (53:151)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 3.09 * fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 25 * fem,
-                          height: 28.04 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-fire-n5t.png',
-                            width: 25 * fem,
-                            height: 28.04 * fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 60 * fem,
-                    ),
-                    Container(
-                      // iconmagnifyingglassmta (53:149)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 1.14 * fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 30 * fem,
-                          height: 30 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-magnifying-glass.png',
-                            width: 30 * fem,
-                            height: 30 * fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 60 * fem,
-                    ),
-                    TextButton(
-                      // iconmenuE1U (53:147)
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: SizedBox(
-                        width: 30 * fem,
-                        height: 26.14 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/icon-menu-sgS.png',
-                          width: 30 * fem,
-                          height: 26.14 * fem,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              // rectangle14WDt (53:163)
-              left: 0 * fem,
-              top: 780 * fem,
-              child: Align(
-                child: SizedBox(
-                  width: 390 * fem,
-                  height: 1 * fem,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                  children: const [
           ],
         ),
       ),
-    );
+      
+    )]
+    )
+    
+    ));
   }
 }

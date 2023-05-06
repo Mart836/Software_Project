@@ -269,44 +269,34 @@ class Home extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                // betteryoupYv (1:54)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 175 * fem, 0 * fem),
-                                child: Text(
-                                  'BetterYou',
-                                  style: SafeGoogleFont(
-                                    'Inter',
-                                    fontSize: 17 * ffem,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.2125 * ffem / fem,
-                                    color: const Color(0xff000000),
-                                  ),
+                              Text(
+                                'BetterYou',
+                                style: SafeGoogleFont(
+                                  'Inter',
+                                  fontSize: 17 * ffem,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.2125 * ffem / fem,
+                                  color: const Color(0xff000000),
                                 ),
                               ),
-                              Container(
-                                // iconbell9LJ (22:12)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                child: TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Notifications()));
-                                  },
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: SizedBox(
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const Notifications()));
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: SizedBox(
+                                  width: 20 * fem,
+                                  height: 20 * fem,
+                                  child: Image.asset(
+                                    'assets/page-1/images/icon-bell.png',
                                     width: 20 * fem,
                                     height: 20 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/icon-bell.png',
-                                      width: 20 * fem,
-                                      height: 20 * fem,
-                                    ),
                                   ),
                                 ),
                               ),

@@ -501,5 +501,20 @@ class Prayer extends StatelessWidget {
         ),
       ),
     );
+    bottomNavigationBar: BottomNavigationBar(
+      elevation: 3,
+               onTap: (int newIndex){
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
+      );
   }
 }
