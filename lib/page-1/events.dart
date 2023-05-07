@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
 
+import 'discover.dart';
+import 'home.dart';
+import 'more.dart';
+import 'prayer.dart';
+
 class Events extends StatelessWidget {
   const Events({super.key});
 
@@ -490,8 +495,72 @@ class Events extends StatelessWidget {
       ),
       
     )]
+    
     )
-        )
+    
+        ),
+         bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.2,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        onTap: (int newIndex){
+          switch(newIndex){
+            case 0:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Home()));
+              break;
+            case 1:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Prayer()));
+            break;
+            case 2:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Discover()));
+            break;
+            case 3:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const More()));
+            break;
+          }
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
+        backgroundColor: Colors.white,
+      ),
+
+        
+    )
     ));
   }
 }

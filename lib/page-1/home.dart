@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page-1/bible-study.dart';
+import 'package:myapp/page-1/bible_study.dart';
 import 'package:myapp/page-1/discover.dart';
 import 'package:myapp/page-1/more.dart';
 import 'package:myapp/page-1/notifications.dart';
@@ -163,7 +163,7 @@ class Home extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const bibleStudy())),
+                                    builder: (context) => const BibleStudy())),
                             child: Text(
                               'Bible Study',
                               style: SafeGoogleFont(

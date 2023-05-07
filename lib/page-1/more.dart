@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:myapp/page-1/discover.dart';
 import 'package:myapp/page-1/events.dart';
 import 'package:myapp/page-1/home.dart';
@@ -10,6 +9,7 @@ import 'package:myapp/utils.dart';
 
 import 'materials.dart';
 import 'payments.dart';
+import 'settings.dart';
 
 class More extends StatelessWidget {
   const More({super.key});
@@ -20,7 +20,6 @@ class More extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-      //scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
         appBar: AppBar(
         title: Text('More', 
@@ -115,9 +114,9 @@ class More extends StatelessWidget {
                           List<String> icons = const <String>['assets/page-1/images/icon-users.png', 'assets/page-1/images/icon-book.png',
                           'assets/page-1/images/icon-location.png','assets/page-1/images/icon-settings.png',
                           'assets/page-1/images/icon-credit-card.png', 'assets/page-1/images/icon-heart-U5t.png'];
-                          List<String> items = const <String>['Members', 'Materials', 'Events', 'Payments', 'Support'];
+                          List<String> items = const <String>['Members', 'Materials', 'Events', 'Settings','Payments', 'Support'];
                           List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
-                          'Sermons, live shows', 'Tithes, donations', 'Contact us, about'];
+                          'Sermons, live shows','Update profile', 'Tithes, donations', 'Contact us, about'];
                           return ListTile(
                             onTap: (){
                               switch(index){
@@ -140,13 +139,18 @@ class More extends StatelessWidget {
                                 case 3:
                                 Navigator.push(context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Payments()));
+                                  builder: (context) => const Settings()));
                                 break;
                                 case 4:
                                 Navigator.push(context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Support()));
+                                  builder: (context) => const Payments()));
                                 break;  
+                                case 5:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Support()));
+                                break;
                               }
                             },
                             leading: Image.asset(icons[index], width: 20, height: 20,),
@@ -166,7 +170,7 @@ class More extends StatelessWidget {
                               
                             )),
                           );},
-                            itemCount: 5
+                            itemCount: 6
                             ),
                         
               ])),

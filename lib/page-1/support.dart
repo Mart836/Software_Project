@@ -9,9 +9,29 @@ class Support extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Support', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,  elevation: 0.5),
+
+        body: Container(
         // supportwHp (103:6)
         width: double.infinity,
         height: 844 * fem,
@@ -21,22 +41,6 @@ class Support extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              // rectangle67fzW (103:7)
-              left: 0 * fem,
-              top: 73 * fem,
-              child: Align(
-                child: SizedBox(
-                  width: 390 * fem,
-                  height: 0.5 * fem,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
               // autogrouppc1rnJS (SgK4Y8G4jy9wAErx8VPC1R)
               left: 15 * fem,
               top: 34 * fem,
@@ -45,38 +49,47 @@ class Support extends StatelessWidget {
                 height: 21 * fem,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // iconarrowleftVyY (103:8)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 8 * fem, 0 * fem),
-                      width: 20 * fem,
-                      height: 19 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-arrow-left-e8v.png',
-                        width: 20 * fem,
-                        height: 19 * fem,
-                      ),
-                    ),
-                    Text(
-                      // support1wt (103:10)
-                      'Support',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 17 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2125 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
-            Positioned(
+            ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemBuilder: (BuildContext context, int index){
+                          
+                          List<String> icons = const <String>['assets/page-1/images/icon-call-96N.png', 'assets/page-1/images/icon-circle-information.png'];
+                          List<String> items = const <String>['Contact US', 'About'];
+                          return ListTile(
+                            onTap: (){
+                              /*switch(index){
+                                case 0:
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Members()));
+                                break;
+                                case 1:
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Materials()));
+                                break;
+                                
+                              }*/
+                            },
+                            leading: Image.asset(icons[index], width: 20, height: 20,),
+                            title: Text(items[index], 
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 14 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2125 * ffem / fem,
+                              color: Colors.black
+                            ),),
+                          );},
+                            itemCount: 2
+                            ),
+ 
+            /*Positioned(
               // autogroupjtytZCi (SgK52SnDDzL2tcFt1VJtYT)
               left: 0 * fem,
-              top: 73.5 * fem,
+              top: 0,
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                     14 * fem, 21.5 * fem, 14 * fem, 670.11 * fem),
@@ -170,9 +183,10 @@ class Support extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
+      ),
       ),
     );
   }

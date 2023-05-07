@@ -9,9 +9,28 @@ class Settings extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+        title: Text('Update profile', 
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+          backgroundColor: Colors.white,  elevation: 0.5),
+        body: Container(
         // settingsGm4 (83:26)
         width: double.infinity,
         height: 844 * fem,
@@ -20,63 +39,11 @@ class Settings extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              // rectangle22rsg (83:30)
-              left: 0 * fem,
-              top: 73 * fem,
-              child: Align(
-                child: SizedBox(
-                  width: 390 * fem,
-                  height: 0.5 * fem,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // autogroup7eq1kTG (SgJZu2pCSTryUn8pGE7eq1)
-              left: 15 * fem,
-              top: 34 * fem,
-              child: SizedBox(
-                width: 145 * fem,
-                height: 21 * fem,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // iconarrowleftGRc (83:31)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 8 * fem, 0 * fem),
-                      width: 20 * fem,
-                      height: 19 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-arrow-left.png',
-                        width: 20 * fem,
-                        height: 19 * fem,
-                      ),
-                    ),
-                    Text(
-                      // updateprofileWKx (83:33)
-                      'Update profile',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 17 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2125 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
             Positioned(
               // autogroupacgbc86 (SgJaxvCkHQyBKXUjBWACGB)
               left: 0 * fem,
-              top: 73.5 * fem,
+              top: 0 * fem,
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                     18 * fem, 25.5 * fem, 21 * fem, 169 * fem),
@@ -297,6 +264,7 @@ class Settings extends StatelessWidget {
           ],
         ),
       ),
+      )
     );
   }
 }

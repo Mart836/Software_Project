@@ -46,8 +46,8 @@ class Prayer extends StatelessWidget {
           children: [
             Positioned(
               // autogroupucewL6r (SgK955YFcfQ3Hc7TbFuCEw)
-              left: 0 * fem,
-              top: 78 * fem,
+              left: 0,
+              top:0,
               child: SizedBox(
                 width: 390 * fem,
                 height: 766 * fem,

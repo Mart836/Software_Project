@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
 
+import 'discover.dart';
+import 'home.dart';
+import 'more.dart';
+import 'prayer.dart';
+
 class Calendar extends StatelessWidget {
   const Calendar({super.key});
 
@@ -29,10 +34,10 @@ class Calendar extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-          backgroundColor: Colors.white,),
+          backgroundColor: Colors.white, elevation: 0.5,),
         body: Container(
         // calendarUri (83:1568)
-        padding: EdgeInsets.fromLTRB(0 * fem, 44 * fem, 0 * fem, 0 * fem),
+        padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem * fem, 0 * fem, 0 * fem),
         width: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
@@ -40,7 +45,6 @@ class Calendar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Container(
               // autogroupi1v5iPg (SgJgTLtW9iwvbrHXUei1V5)
               padding:
@@ -51,8 +55,6 @@ class Calendar extends StatelessWidget {
                 children: [
                   Container(
                     // calendareYE (83:1688)
-                    margin: EdgeInsets.fromLTRB(
-                        20 * fem, 0 * fem, 19 * fem, 87 * fem),
                     padding: EdgeInsets.fromLTRB(
                         16 * fem, 16 * fem, 16 * fem, 16 * fem),
                     width: double.infinity,
@@ -791,107 +793,72 @@ class Calendar extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                  Container(
-                    // rectangle58M7k (83:1756)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 2 * fem, 26 * fem),
-                    width: double.infinity,
-                    height: 1 * fem,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                  Container(
-                    // autogroup5pfvVDx (SgJg7Gdcm8gQcMUPzX5pfV)
-                    margin: EdgeInsets.fromLTRB(
-                        35 * fem, 0 * fem, 48 * fem, 0 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // autogroupxj1mP4S (SgJgGS31ycMVsmTHYNXj1m)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 60 * fem, 1 * fem),
-                          width: 33 * fem,
-                          height: 29 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/auto-group-xj1m.png',
-                            width: 33 * fem,
-                            height: 29 * fem,
-                          ),
-                        ),
-                        Container(
-                          // iconfire2dC (83:1752)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 60 * fem, 1.96 * fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: SizedBox(
-                              width: 25 * fem,
-                              height: 28.04 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-fire-AAz.png',
-                                width: 25 * fem,
-                                height: 28.04 * fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // iconmagnifyingglassTCi (83:1750)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 69 * fem, 0 * fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: SizedBox(
-                              width: 30 * fem,
-                              height: 30 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-magnifying-glass-zVU.png',
-                                width: 30 * fem,
-                                height: 30 * fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // iconmenuJDL (83:1748)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0.14 * fem, 0 * fem, 0 * fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: SizedBox(
-                              width: 30 * fem,
-                              height: 26.14 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-menu-Z3t.png',
-                                width: 30 * fem,
-                                height: 26.14 * fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                  ),],
+        ),
+        
+      )]
+    )
+    ),
+    bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 0.2,
             ),
           ],
         ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        onTap: (int newIndex){
+          switch(newIndex){
+            case 0:
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Home()));
+              break;
+            case 1:
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Prayer()));
+            break;
+            case 2:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const Discover()));
+            break;
+            case 3:
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const More()));
+            break;
+          }
+        },
+        items: [BottomNavigationBarItem(
+          label: "",
+          icon: Image.asset('assets/page-1/images/icon-home-gPY.png', width: 28 * fem,height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-fire-G9c.png', width: 28 * fem, height: 28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-magnifying-glass-kWA.png', width: 28 * fem, height:28 * fem,)),
+          BottomNavigationBarItem(label: "",
+          icon: Image.asset('assets/page-1/images/icon-menu-q3t.png', width:28 * fem,height: 28 * fem,))
+        ],
+        backgroundColor: Colors.white,
       ),
-      )
-    );
+    )
+    ));
   }
 }
