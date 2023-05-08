@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
 
+import 'tithes.dart';
+
 class Payments extends StatelessWidget {
   const Payments({super.key});
 
@@ -36,20 +38,20 @@ class Payments extends StatelessWidget {
                           List<String> items = const <String>['Tithes', 'Donate'];
                           return ListTile(
                             onTap: (){
-                              /*switch(index){
+                              switch(index){
                                 case 0:
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const Members()));
+                                    builder: (context) => const Tithes()));
                                 break;
-                                case 1:
+                                /*case 1:
                                 Navigator.push(context,
                                 MaterialPageRoute(
                                   builder: (context) => const Materials()));
-                                break;
+                                break;*/
                                 
-                              }*/
+                              }
                             },
                             leading: Image.asset(icons[index], width: 20, height: 20,),
                             title: Text(items[index], 

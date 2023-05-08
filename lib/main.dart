@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page-1/more.dart';
+import 'package:myapp/page-1/bible_study.dart';
 import 'package:myapp/utils.dart';
+
+import 'page-1/home.dart';
+import 'page-1/splash.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Scaffold(
-        body: More(),
+        body: Splash(),
       ),
     );
   }

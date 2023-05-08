@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/utils.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../utils.dart';
 import 'discover.dart';
 import 'home.dart';
 import 'more.dart';
 import 'prayer.dart';
 
-class BibleStudy extends StatelessWidget {
+
+class BibleStudy extends StatefulWidget {
   const BibleStudy({super.key});
+
+  @override
+  State<BibleStudy> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<BibleStudy> {
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(-22.55, 17.08);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +30,10 @@ class BibleStudy extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.green[700],
+      ),
       home: Scaffold(
         appBar: AppBar(
         title: Text('Our locations', 
@@ -35,44 +54,14 @@ class BibleStudy extends StatelessWidget {
             height: 18 * fem,
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
-        body: Container(
-        // biblestudymyx (83:1757)
-        padding: EdgeInsets.fromLTRB(0 * fem, 40 * fem, 0 * fem, 26 * fem),
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          color: Color(0xffffffff),
+        body: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 15.0,
+          ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              // ourlocations97L (115:75)
-              margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 0 * fem, 13 * fem),
-              child: Text(
-                'Our locations',
-                style: SafeGoogleFont(
-                  'Inter',
-                  fontSize: 17 * ffem,
-                  fontWeight: FontWeight.w600,
-                  height: 1.2125 * ffem / fem,
-                  color: const Color(0xff000000),
-                ),
-              ),
-            ),
-            Container(
-              // rectangleFw4 (115:74)
-              margin: EdgeInsets.fromLTRB(20 * fem, 0 * fem, 0 * fem, 11 * fem),
-              width: 355 * fem,
-              height: 550 * fem,
-              child: Image.asset(
-                'assets/page-1/images/rectangle.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Container(
+        bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -131,7 +120,7 @@ class BibleStudy extends StatelessWidget {
         ],
         backgroundColor: Colors.white,
       ),
-      )
+      ),
     ));
   }
 }

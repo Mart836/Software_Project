@@ -12,8 +12,9 @@ import 'payments.dart';
 import 'settings.dart';
 
 class More extends StatelessWidget {
+  final double coverHeight = 80;
+  final double profileHeight = 80;
   const More({super.key});
-
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -73,26 +74,11 @@ class More extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                // aina1iu4 (64:191)
-                                width: 70 * fem,
-                                height: 70 * fem,
-                                child: ClipRRect(
-                                  
-                                  borderRadius:
-                                      BorderRadius.circular(360 * fem),
-                                      
-                                  child: Image.asset(
-                                    'assets/page-1/images/aina-1-djU.png',
-                                    fit: BoxFit.cover,
-                                    
-                                  ),
-                                ),
-                              ),
+                              buildProfileImage(),
                               Container(
                                 margin: EdgeInsets.symmetric(horizontal: 10 * fem),
                                 child: Text(
-                                'Aina Iiyehela',
+                                'Aina Davel',
                                 style: SafeGoogleFont(
                                   'Inter',
                                   fontSize: 15 * ffem,
@@ -234,10 +220,15 @@ class More extends StatelessWidget {
         ],
         backgroundColor: Colors.white,
       ),
-
+      
       ),
-
       
     ));
   }
+  // sets image from online url
+  Widget buildProfileImage() => CircleAvatar(
+    radius: profileHeight/2,
+    backgroundColor: Colors.grey.shade800,
+    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+  );
 }

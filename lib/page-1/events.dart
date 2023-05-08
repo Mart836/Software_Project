@@ -18,14 +18,17 @@ class Events extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-        title: Text('Events', 
-        style: SafeGoogleFont(
+        title: SizedBox(
+          child: Text('Events', 
+          style: SafeGoogleFont(
           'Inter',
           fontSize: 17 * ffem,
           fontWeight: FontWeight.w600,
           height: 1.2125 * ffem / fem,
-          color:const Color(0xff000000),
+          color:const Color(0xff000000)
         )),
+        
+        ),
         leading:TextButton(
           onPressed: () {
             Navigator.pop(context);
@@ -405,6 +408,7 @@ class Events extends StatelessWidget {
                               ),
                             ),
                           ),
+                          const Spacer(flex: 20,),
                           Container(
                             // autogroupjmjbLcv (SgJdHSAwaWYeYH797FJmJb)
                             margin: EdgeInsets.fromLTRB(
