@@ -86,6 +86,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_event_calendar:
     dependency: "direct main"
     description:
@@ -94,6 +95,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -102,6 +105,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+<<<<<<< HEAD
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -110,6 +114,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.14"
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -123,6 +129,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+<<<<<<< HEAD
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -155,6 +162,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.6"
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   http:
     dependency: transitive
     description:
@@ -291,6 +300,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+<<<<<<< HEAD
   scoped_model:
     dependency: transitive
     description:
@@ -307,6 +317,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.0"
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   sky_engine:
     dependency: transitive
     description: flutter
@@ -336,6 +348,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+<<<<<<< HEAD
   stream_transform:
     dependency: transitive
     description:
@@ -344,6 +357,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   string_scanner:
     dependency: transitive
     description:

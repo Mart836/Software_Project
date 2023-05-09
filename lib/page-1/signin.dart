@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:myapp/page-1/home.dart';
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 import 'package:myapp/page-1/signup.dart';
 import 'package:myapp/utils.dart';
 
@@ -198,6 +201,7 @@ class signIn extends StatelessWidget {
                   ),
                 ),
               ),
+<<<<<<< HEAD
 
               // login button
               SizedBox(
@@ -217,6 +221,21 @@ class signIn extends StatelessWidget {
                   )
                 ),
                 child: Text(
+=======
+              Container(
+                // autogroupdmqdoL2 (SgKHDG99L54wr3uY4qdmqd)
+                margin:
+                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 6 * fem, 16 * fem),
+                width: 345 * fem,
+                height: 45 * fem,
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color(0xff000000)),
+                  color: const Color(0xff000000),
+                  borderRadius: BorderRadius.circular(10 * fem),
+                ),
+                child: Center(
+                  child: Text(
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     'L O G I N',
                     style: SafeGoogleFont(
                       'Inter',
@@ -225,7 +244,12 @@ class signIn extends StatelessWidget {
                       height: 1.2125 * ffem / fem,
                       color: const Color(0xffffffff),
                     ),
+<<<<<<< HEAD
                   ),)
+=======
+                  ),
+                ),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
               ),
               Container(
                 // autogroupffakf7L (SgKHQ6ASDj3gyinx5aFfAK)

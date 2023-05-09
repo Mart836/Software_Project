@@ -9,6 +9,7 @@ class Settings extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+<<<<<<< HEAD
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -31,6 +32,11 @@ class Settings extends StatelessWidget {
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
         body: Container(
+=======
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         // settingsGm4 (83:26)
         width: double.infinity,
         height: 844 * fem,
@@ -39,11 +45,71 @@ class Settings extends StatelessWidget {
         ),
         child: Stack(
           children: [
+<<<<<<< HEAD
 
             Positioned(
               // autogroupacgbc86 (SgJaxvCkHQyBKXUjBWACGB)
               left: 0 * fem,
               top: 0 * fem,
+=======
+            Positioned(
+              // rectangle22rsg (83:30)
+              left: 0 * fem,
+              top: 73 * fem,
+              child: Align(
+                child: SizedBox(
+                  width: 390 * fem,
+                  height: 0.5 * fem,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffd9d9d9),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // autogroup7eq1kTG (SgJZu2pCSTryUn8pGE7eq1)
+              left: 15 * fem,
+              top: 34 * fem,
+              child: SizedBox(
+                width: 145 * fem,
+                height: 21 * fem,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // iconarrowleftGRc (83:31)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 8 * fem, 0 * fem),
+                      width: 20 * fem,
+                      height: 19 * fem,
+                      child: Image.asset(
+                        'assets/page-1/images/icon-arrow-left.png',
+                        width: 20 * fem,
+                        height: 19 * fem,
+                      ),
+                    ),
+                    Text(
+                      // updateprofileWKx (83:33)
+                      'Update profile',
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 17 * ffem,
+                        fontWeight: FontWeight.w600,
+                        height: 1.2125 * ffem / fem,
+                        color: const Color(0xff000000),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              // autogroupacgbc86 (SgJaxvCkHQyBKXUjBWACGB)
+              left: 0 * fem,
+              top: 73.5 * fem,
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                     18 * fem, 25.5 * fem, 21 * fem, 169 * fem),
@@ -52,7 +118,24 @@ class Settings extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+<<<<<<< HEAD
                     buildProfileImage(),
+=======
+                    Container(
+                      // aina25Ga (83:1927)
+                      margin: EdgeInsets.fromLTRB(
+                          5 * fem, 0 * fem, 0 * fem, 23 * fem),
+                      width: 100 * fem,
+                      height: 100 * fem,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(360 * fem),
+                        child: Image.asset(
+                          'assets/page-1/images/aina-2.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     Container(
                       // editiqL (83:1853)
                       margin: EdgeInsets.fromLTRB(
@@ -134,7 +217,11 @@ class Settings extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10 * fem),
                       ),
                       child: Text(
+<<<<<<< HEAD
                         'Davel',
+=======
+                        'Iiyehela',
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                         style: SafeGoogleFont(
                           'Inter',
                           fontSize: 14 * ffem,
@@ -251,6 +338,7 @@ class Settings extends StatelessWidget {
           ],
         ),
       ),
+<<<<<<< HEAD
       )
     );
   }
@@ -260,4 +348,8 @@ class Settings extends StatelessWidget {
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );
+=======
+    );
+  }
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 }

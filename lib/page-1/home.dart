@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:myapp/page-1/bible_study.dart';
+=======
+import 'package:myapp/page-1/bible-study.dart';
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 import 'package:myapp/page-1/discover.dart';
 import 'package:myapp/page-1/more.dart';
 import 'package:myapp/page-1/notifications.dart';
@@ -29,6 +33,7 @@ class Home extends StatelessWidget {
           color:const Color(0xff000000),
         )),
         actions: [
+<<<<<<< HEAD
           InkWell(onTap: (){
             Navigator.push(
               context,
@@ -50,6 +55,34 @@ class Home extends StatelessWidget {
             // home
             width: double.infinity,
            height:800* fem,
+=======
+          Image.asset('assets/page-1/images/icon-bell.png', width: 20 * fem, height: 20 * fem,),
+          
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+            child: SizedBox(
+              width: 50 * fem,
+              height: 50 * fem,
+              child: ClipRRect(
+              borderRadius: BorderRadius.circular(360 * fem),
+              child: Image.asset(
+                'assets/page-1/images/aina-3-Uzi.png',
+                fit: BoxFit.cover,
+              ),
+              ),
+            ),
+            ),
+            ],
+            backgroundColor: Colors.white,),
+        body: SingleChildScrollView(
+            child: Flexible(
+          child: Container(
+            // homejga (0:3)
+            //width: double.infinity,
+           height:700 * fem,
+            
+
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -58,10 +91,17 @@ class Home extends StatelessWidget {
                 Positioned(
                   // autogroupkj7hKug (SgKBmvCaxjrTX15Jvpkj7h)
                   left: 0 * fem,
+<<<<<<< HEAD
                   top: 10,
                   child: SizedBox(
                     //padding: EdgeInsets.fromLTRB(
                      //   0 * fem, 14 * fem, 0 * fem, 0 * fem),
+=======
+                  top: 0 * fem,
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(
+                        0 * fem, 14 * fem, 0 * fem, 0 * fem),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     width: 390 * fem,
                     height: 758.3 * fem,
                     child: SingleChildScrollView(
@@ -79,11 +119,19 @@ class Home extends StatelessWidget {
                               Positioned(
                                 // rectangle4a4v (1:52)
                                 left: 0 * fem,
+<<<<<<< HEAD
                                 top: 100 * fem,
                                 child: Align(
                                   child: SizedBox(
                                     width: 364 * fem,
                                     height: 900 * fem,
+=======
+                                top: 10 * fem,
+                                child: Align(
+                                  child: SizedBox(
+                                    width: 364 * fem,
+                                    height: 400 * fem,
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                                     child: Container(
                                       decoration: BoxDecoration(
                                         borderRadius:
@@ -157,7 +205,11 @@ class Home extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
+<<<<<<< HEAD
                                     builder: (context) => const BibleStudy())),
+=======
+                                    builder: (context) => const bibleStudy())),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                             child: Text(
                               'Bible Study',
                               style: SafeGoogleFont(
@@ -245,7 +297,11 @@ class Home extends StatelessWidget {
               ],
             ),
           ),
+<<<<<<< HEAD
         ),
+=======
+        )),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -253,14 +309,21 @@ class Home extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
+<<<<<<< HEAD
               spreadRadius: 0.2,
+=======
+              spreadRadius: 0.7,
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
             ),
           ],
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+<<<<<<< HEAD
           showSelectedLabels: false,
           showUnselectedLabels: false,
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         onTap: (int newIndex){
           switch(newIndex){
             case 1:
@@ -300,10 +363,13 @@ class Home extends StatelessWidget {
       ),
     ));
   }
+<<<<<<< HEAD
   // sets user image from an online url
   Widget buildProfileImage() => CircleAvatar(
     radius: 25,
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 }

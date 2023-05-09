@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
 
+<<<<<<< HEAD
 import 'discover.dart';
 import 'home.dart';
 import 'more.dart';
 import 'prayer.dart';
 
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 class Events extends StatelessWidget {
   const Events({super.key});
 
@@ -18,17 +21,27 @@ class Events extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+<<<<<<< HEAD
         title: SizedBox(
           child: Text('Events', 
           style: SafeGoogleFont(
+=======
+        title: Text('Events', 
+        style: SafeGoogleFont(
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
           'Inter',
           fontSize: 17 * ffem,
           fontWeight: FontWeight.w600,
           height: 1.2125 * ffem / fem,
+<<<<<<< HEAD
           color:const Color(0xff000000)
         )),
         
         ),
+=======
+          color:const Color(0xff000000),
+        )),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         leading:TextButton(
           onPressed: () {
             Navigator.pop(context);
@@ -38,8 +51,12 @@ class Events extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
+<<<<<<< HEAD
           backgroundColor: Colors.white,
            elevation: 0.5),
+=======
+          backgroundColor: Colors.white,),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         body: Container(
         // eventsT2n (1:175)
         width: double.infinity,
@@ -342,7 +359,12 @@ class Events extends StatelessWidget {
                     ),
                     Container(
                       // autogroupk4f56wY (SgJd8779o7eC63EbiJk4f5)
+<<<<<<< HEAD
                      
+=======
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 3 * fem, 0 * fem),
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                       padding: EdgeInsets.fromLTRB(
                           34 * fem, 11 * fem, 14 * fem, 26 * fem),
                       decoration: BoxDecoration(
@@ -407,7 +429,10 @@ class Events extends StatelessWidget {
                               ),
                             ),
                           ),
+<<<<<<< HEAD
                           const Spacer(flex: 20,),
+=======
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                           Container(
                             // autogroupjmjbLcv (SgJdHSAwaWYeYH797FJmJb)
                             margin: EdgeInsets.fromLTRB(
@@ -498,6 +523,7 @@ class Events extends StatelessWidget {
       ),
       
     )]
+<<<<<<< HEAD
     
     )
     
@@ -564,6 +590,10 @@ class Events extends StatelessWidget {
 
         
     )
+=======
+    )
+        )
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
     ));
   }
 }

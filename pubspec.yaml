@@ -1,5 +1,7 @@
 name: myapp
-description: A exported flutter project from FUNCTION12
+
+description :  flutter project.
+
 
 
 # The following line prevents the package from being accidentally published to
@@ -32,6 +34,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -40,11 +43,20 @@ dependencies:
   google_maps_flutter: ^2.2.6
   flutter_event_calendar: ^1.0.0
   
+=======
+    firebase_core: ^1.0.1
+    firebase_auth: ^4.5.0
+    google_fonts: ^3.0.1
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
