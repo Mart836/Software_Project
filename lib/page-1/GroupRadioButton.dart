@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GroupRadioButton extends StatefulWidget {
-  GroupRadioButton({super.key, 
+  const GroupRadioButton({super.key, 
     required this.label,
     required this.padding,
     required this.onChanged,

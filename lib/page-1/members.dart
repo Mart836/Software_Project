@@ -127,7 +127,27 @@ class Members extends StatelessWidget {
                 color: Color(0xffd9d9d9),
               ),
             ),
-            Container(
+              ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemBuilder: (BuildContext context, int index){
+                          return Card(
+                            elevation: 0.5,
+                            //margin: const EdgeInsets.symmetric(vertical: 10),
+                            child: ListTile(
+                            onTap: (){
+                            },
+                            leading:buildProfileImage(),
+                            title: Text("Username", 
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 14 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2125 * ffem / fem,
+                              color: Colors.black
+                            ),),
+                          ));},
+                            itemCount: 8
+            )
+                        
+            /*Container(
               // autogrouphboqAEz (SgJrCPzKGnayid4tHvHboq)
               margin:
                   EdgeInsets.fromLTRB(35 * fem, 0 * fem, 186 * fem, 14 * fem),
@@ -550,10 +570,16 @@ class Members extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color(0xffd9d9d9),
               ),
-            ),
+            ),*/
           ],
         ),
       ),
     ));
   }
+  // sets image from online url
+  Widget buildProfileImage() => CircleAvatar(
+    radius: 30,
+    backgroundColor: Colors.grey.shade800,
+    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+  );
 }

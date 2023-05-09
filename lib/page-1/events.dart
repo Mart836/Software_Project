@@ -342,8 +342,7 @@ class Events extends StatelessWidget {
                     ),
                     Container(
                       // autogroupk4f56wY (SgJd8779o7eC63EbiJk4f5)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 3 * fem, 0 * fem),
+                     
                       padding: EdgeInsets.fromLTRB(
                           34 * fem, 11 * fem, 14 * fem, 26 * fem),
                       decoration: BoxDecoration(

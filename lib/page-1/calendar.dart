@@ -36,25 +36,57 @@ class Calendar extends StatelessWidget {
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
         body: EventCalendar(
+          
       calendarType: CalendarType.GREGORIAN,
       calendarLanguage: 'en',
       calendarOptions: CalendarOptions(
-        toggleViewType: false,
+        toggleViewType: true,
         viewType: ViewType.MONTHLY,
-        //headerMonthBackColor: Colors.black
+        headerMonthBackColor: Colors.white
       ),
       showLoadingForEvent: true,
+      dayOptions: DayOptions(
+        selectedBackgroundColor: Colors.red,
+        eventCounterColor: Colors.red,
+        eventCounterViewType: DayEventCounterViewType.DOT
+      ),
+      eventOptions: EventOptions(
+        emptyIconColor: Colors.grey.shade300,
+        emptyTextColor: Colors.grey.shade300,
+        emptyText: 'No Events'
+      ),
       events: [
         Event(
-          child: const Text('Laravel Event'),
+          child:Card(
+            elevation: 0.2,
+            child: SizedBox(
+              height: 50 * fem,
+              width: double.infinity,
+              child: Padding(
+                padding: EdgeInsets.all(10 * fem),
+                 child: Text('Launch day - 14:00', 
+               style: SafeGoogleFont(
+                'Inter',
+                fontSize: 16 * ffem,
+                fontWeight: FontWeight.w600,
+                height: 1.2125 * ffem / fem,
+                color:const Color.fromARGB(255, 87, 84, 84),)),
+              )
+              
+              
+            )
+           ),
           dateTime: CalendarDateTime(
-            year: 1401,
+            year: 2023,
             month: 5,
-            day: 12,
+            day: 11,
             calendarType: CalendarType.GREGORIAN,
           ),
         ),
       ],
+      headerOptions: HeaderOptions(
+        weekDayStringType: WeekDayStringTypes.SHORT
+      ),
     ),
     bottomNavigationBar: Container(
         decoration: const BoxDecoration(

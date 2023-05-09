@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page-1/bible_study.dart';
+import 'package:myapp/page-1/members.dart';
+import 'package:myapp/page-1/more.dart';
 import 'package:myapp/utils.dart';
 
 import 'page-1/home.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Scaffold(
-        body: Splash(),
+        body: Home(),
       ),
     );
   }

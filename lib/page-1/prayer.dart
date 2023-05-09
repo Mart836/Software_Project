@@ -363,22 +363,6 @@ class Prayer extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              // rectangle8rvz (53:159)
-              left: 0 * fem,
-              top: 77 * fem,
-              child: Align(
-                child: SizedBox(
-                  width: 390 * fem,
-                  height: 1 * fem,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),

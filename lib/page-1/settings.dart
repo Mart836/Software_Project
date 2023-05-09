@@ -52,20 +52,7 @@ class Settings extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      // aina25Ga (83:1927)
-                      margin: EdgeInsets.fromLTRB(
-                          5 * fem, 0 * fem, 0 * fem, 23 * fem),
-                      width: 100 * fem,
-                      height: 100 * fem,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(360 * fem),
-                        child: Image.asset(
-                          'assets/page-1/images/aina-2.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
+                    buildProfileImage(),
                     Container(
                       // editiqL (83:1853)
                       margin: EdgeInsets.fromLTRB(
@@ -147,7 +134,7 @@ class Settings extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10 * fem),
                       ),
                       child: Text(
-                        'Iiyehela',
+                        'Davel',
                         style: SafeGoogleFont(
                           'Inter',
                           fontSize: 14 * ffem,
@@ -267,4 +254,10 @@ class Settings extends StatelessWidget {
       )
     );
   }
+  // sets user image from an online url
+  Widget buildProfileImage() => CircleAvatar(
+    radius: 50,
+    backgroundColor: Colors.grey.shade800,
+    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+  );
 }
