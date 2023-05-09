@@ -95,7 +95,8 @@ class More extends StatelessWidget {
                           ),
                           
                         ),
-                        ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemBuilder: (BuildContext context, int index){
+                        ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true, physics: const ClampingScrollPhysics()
+                        ,itemBuilder: (BuildContext context, int index){
                           
                           List<String> icons = const <String>['assets/page-1/images/icon-users.png', 'assets/page-1/images/icon-book.png',
                           'assets/page-1/images/icon-location.png','assets/page-1/images/icon-settings.png',
@@ -104,6 +105,7 @@ class More extends StatelessWidget {
                           List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
                           'Sermons, live shows','Update profile', 'Tithes, donations', 'Contact us, about'];
                           return ListTile(
+                            contentPadding: EdgeInsets.symmetric(horizontal: 20 * fem),
                             onTap: (){
                               switch(index){
                                 case 0:
