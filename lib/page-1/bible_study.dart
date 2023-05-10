@@ -104,7 +104,7 @@ class _MyAppState extends State<BibleStudy> {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const More()));
+                More()));
             break;
           }
         },

@@ -1,13 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
+
 
 import 'auth.dart';
 
 
 class splash extends StatefulWidget{
    const splash({Key? key}) : super(key: key);
+
   @override
   State<splash> createState() => _splash();
 }
@@ -15,24 +18,13 @@ class _splash extends State<splash> {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () { 
       Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) =>
-                const signIn()));
-      /*StreamBuilder(
-        stream: Auth().authStateChanges,
-        builder: (context, snapshot){
-          if(snapshot.hasData){
-            return Home();
-          }
-          else{
-            return signIn();
-          }
-        }
-      );*/
-    });
+        context,
+        MaterialPageRoute(
+        builder: (context) => Home()));
+      
+   });
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;

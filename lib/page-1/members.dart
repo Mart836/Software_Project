@@ -1,8 +1,21 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/read%20data/get_user_name.dart';
 import 'package:myapp/utils.dart';
 
+// ignore: must_be_immutable
 class Members extends StatelessWidget {
-  const Members({super.key});
+   Members({super.key});
+
+  List<String> members = [];
+  Future getUser() async{
+    await FirebaseFirestore.instance.collection('users').get().then((
+      snapshot) => snapshot.docs.forEach((document) {
+        print(document.reference);
+        members.add(document.reference.id);
+      }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +43,32 @@ class Members extends StatelessWidget {
             height: 18 * fem,
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
-          body: SizedBox(
-                    // autogroupe89zzZU (SgJqzpVGq156FEg2yHe89Z)
-                    width: double.infinity,
-                    height: 53 * fem,
-                    child: Stack(
-                      children: [
-                        Positioned(
+          body: Container(
+            height: double.infinity,
+            decoration: BoxDecoration(color: Colors.white),
+            child: FutureBuilder(
+              future: getUser(), builder: (context, snapshot){
+                return ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true, physics: const ClampingScrollPhysics()
+            ,itemBuilder: (BuildContext context, int index){
+              return Card(
+                elevation: 0,
+                 child:ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 5 * fem, vertical: 5),
+                onTap: (){
+                },
+                leading: buildProfileImage(),
+                title: getUserName(documentId: members[index])
+                ));
+              },
+                itemCount: members.length
+              );
+              }
+            )
+           /* children: [
+
+              Stack(
+                children: [
+                  Positioned(
                           // group2LdL (71:248)
                           left: 0 * fem,
                           top: 0 * fem,
@@ -98,7 +130,38 @@ class Members extends StatelessWidget {
                 color: Color(0xffd9d9d9),
               ),
             ),
-      ]),
-    )));
+
+           Container(
+              // rectangle25DqY (71:254)
+              margin:
+                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 14.5 * fem),
+              width: double.infinity,
+              height: 0.5 * fem,
+              decoration: const BoxDecoration(
+                color: Color(0xffd9d9d9),
+              ),
+            ),
+            
+            ]
+                   /* // autogroupe89zzZU (SgJqzpVGq156FEg2yHe89Z)
+                    width: double.infinity,
+                    height: 53 * fem,
+                    
+            
+      ]
+      ),*/
+      
+    )
+  
+  
+            ]*/
+              ),
+    ));
   }
+  // sets image from online url
+  Widget buildProfileImage() => CircleAvatar(
+    radius: 35,
+    backgroundColor: Colors.grey.shade800,
+    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+  );
 }

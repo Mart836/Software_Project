@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'discover.dart';
 import 'events.dart';
@@ -10,19 +13,34 @@ import 'prayer.dart';
 import 'settings.dart';
 import 'support.dart';
 
-class More extends StatelessWidget {
-  const More({super.key});
+class More extends StatefulWidget {
+    const More({Key? key}) : super(key: key);
+
+    @override
+    State<More> createState() => _More();
+}
+
+class _More extends State<More>{
 
   @override
+  void initState(){
+    firebaseDocument();
+    setState(() {
+      
+    });
+    super.initState();
+}
+@override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+    
     return MaterialApp(
       //scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
         appBar: AppBar(
-        title: Text('More', 
+        title: Text('More',
         style: SafeGoogleFont(
           'Inter',
           fontSize: 17 * ffem,
@@ -32,6 +50,7 @@ class More extends StatelessWidget {
         )),
         leading:TextButton(
           onPressed: () {
+            getCurrentUser();
             Navigator.pop(context);
           },
           child: Image.asset(
@@ -77,7 +96,7 @@ class More extends StatelessWidget {
                               Container(
                                 margin: EdgeInsets.symmetric(horizontal: 10 * fem),
                                 child: Text(
-                                'Aina Iiyehela',
+                                "Aina Davel",
                                 style: SafeGoogleFont(
                                   'Inter',
                                   fontSize: 15 * ffem,
@@ -105,13 +124,13 @@ class More extends StatelessWidget {
                           'Sermons, live shows','Update profile', 'Tithes, donations', 'Contact us, about'];
                           return ListTile(
                             contentPadding: EdgeInsets.symmetric(horizontal: 20 * fem),
-                            onTap: (){
+                            onTap: () async{
                               switch(index){
                                 case 0:
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const Members()));
+                                    builder: (context) => Members()));
                                 break;
                                 case 1:
                                 Navigator.push(context,
@@ -124,9 +143,8 @@ class More extends StatelessWidget {
                                   builder: (context) => const Events()));
                                 break;    
                                 case 3:
-                                Navigator.push(context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Settings()));
+                                 SharedPreferences pref = await SharedPreferences.getInstance();
+                                 pref.remove("email");
                                 break;
                                 /*case 4:
                                 Navigator.push(context,
@@ -232,4 +250,19 @@ class More extends StatelessWidget {
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );
+}
+FirebaseAuth _auth = FirebaseAuth.instance;
+  getCurrentUser() async {
+    final user = await _auth.currentUser!;
+    var userId = user.uid;
+    // Similarly we can get email as well
+    //final uemail = user.email;
+    //print(userId);
+ 
+  }
+  firebaseDocument() async{
+
+    var variable = await FirebaseFirestore.instance.collection('users').doc('WIUSSnpAKzALO68Zooh8').get();
+     print(variable['firstName']);
+
 }

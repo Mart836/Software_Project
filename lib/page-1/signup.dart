@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
 
@@ -17,20 +17,98 @@ class signUp extends StatefulWidget{
 class _signUp extends State<signUp> {
   String? errorMessage = '';
   bool isLogin = false;
+  bool checkedValue = false;
+  Color myC = Colors.red;
+
+  List gender=["Male","Female"]; // for gender selection
+  String select = "Male";
+  Row addRadioButton(int btnValue, String title) {
+    return Row(
+       mainAxisAlignment: MainAxisAlignment.start,
+       children: <Widget>[
+    Radio(
+      
+      activeColor: Theme.of(context).primaryColor,
+      value: gender[btnValue],
+      groupValue: select,
+      onChanged: (value){
+        setState(() {
+          print(value);
+          select=value;
+        });
+      },
+    ),
+    Text(title)
+  ],);
+ }
+
+  Widget _checkBox(){
+    return Row(
+      children: [
+        Checkbox(
+          
+           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+           activeColor: Colors.black,
+           value: checkedValue,
+          onChanged: (newValue) {
+          setState(() {
+          checkedValue = newValue!;
+          if(checkedValue){
+            myC = Colors.black;
+          }
+          else{
+            myC = Colors.red;
+          }
+        });
+        },  //  <-- leading Checkbox
+      ),
+      Text("I have read and understood all privacy policies",
+      style: SafeGoogleFont(
+      'Inter',
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: myC,
+      ),),
+      ],
+    );
+  }
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
+  final TextEditingController _controllerFirstName = TextEditingController();
+  final TextEditingController _controllerLastName = TextEditingController();
+  final TextEditingController _controllerAge = TextEditingController();
+  final TextEditingController _controllerCell= TextEditingController();
+  
 
   Future<void> createUserWithEmailAndPassword() async{
     try{
-      await Auth().createUserWithEmailAndPassword(email: _controllerEmail.text, password: _controllerPassword.text);
+      if(checkedValue){
+        await Auth().createUserWithEmailAndPassword(email: _controllerEmail.text.toLowerCase().trim(), password: _controllerPassword.text.trim());
+        addUserData(_controllerFirstName.text.trim(), _controllerLastName.text.trim(),
+         _controllerEmail.text.toLowerCase().trim(), select, int.parse(_controllerCell.text.trim()), int.parse(_controllerAge.text.trim()));
         Navigator.push(context
         , MaterialPageRoute(builder: (context) => signIn()));
-    } on FirebaseAuthException catch(e){
+      }
+      else{
+        myC = Colors.red;
+        };  
+    }on FirebaseAuthException catch(e){
       setState(() {
         errorMessage = e.message;
       });
     }
+  }
+  Future<void> addUserData(String nFirst, String nLast, String nEmail, String nGender, int nCell, int nAge) async{
+    await FirebaseFirestore.instance.collection('users').add({
+      'firstName': nFirst,
+      'lastName': nLast,
+      'email': nEmail,
+      'gender': nGender,
+      'age': nAge,
+      'cellNum': nCell,
+      'verified': false
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -38,7 +116,6 @@ class _signUp extends State<signUp> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-      scrollBehavior: MyCustomScrollBehavior(),
       home: Scaffold(
         body: SingleChildScrollView(
           // was raising an error
@@ -116,6 +193,7 @@ class _signUp extends State<signUp> {
                 ),
                 
                 TextField(
+                  controller: _controllerFirstName,
                         obscureText: false,
                         decoration: InputDecoration(labelText: 'Firstname',
                           border: OutlineInputBorder(
@@ -135,7 +213,7 @@ class _signUp extends State<signUp> {
                       ),
                 TextField(
                 // emailaddressXCA (83:1980)
-                
+                controller: _controllerLastName,
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Lastname',
                   border: OutlineInputBorder(
@@ -174,117 +252,15 @@ class _signUp extends State<signUp> {
               ),
                 
                 SizedBox( height: 15 * fem),
-                Container(
-                  // autogroupey7qoEN (SgKDygs2GfbdgK8o5Vey7q)
-                  margin:
-                      EdgeInsets.fromLTRB(17 * fem, 0 * fem, 0 * fem, 10 * fem),
-                  width: double.infinity,
-                  height: 45 * fem,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        // autogroupryafis8 (SgKELgG3nJdfCMM1icRYaF)
-                        padding: EdgeInsets.fromLTRB(
-                            0 * fem, 13 * fem, 61 * fem, 12 * fem),
-                        height: double.infinity,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // radioTZp (83:1949)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 4 * fem, 0 * fem),
-                              width: 20 * fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff5470ff)),
-                                color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.circular(100 * fem),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: const Color(0x142d2d42),
-                                    offset: Offset(0 * fem, 3 * fem),
-                                    blurRadius: 2.5 * fem,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            /*GroupRadioButton(
-                            label: const [Text("Male"), Text("Female")],
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            spaceBetween: 5,
-                            radioRadius: 10,
-                            
-                            onChanged: (listIndex) {
-                              // print(listIndex);
-                              },
-                            ),*/
-                            
-                            Container(
-                              // female9Bk (83:1951)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 19 * fem, 0 * fem),
-                              child: Text(
-                                'Female',
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: 14 * ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.4285714286 * ffem / fem,
-                                  color: const Color(0xff000000),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              // radiowithlabel55Q (83:1946)
-                              height: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // radioQdU (83:1947)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 6 * fem, 0 * fem),
-                                    width: 20 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: const Color(0xffd9d9d9)),
-                                      color: const Color(0xffffffff),
-                                      borderRadius:
-                                          BorderRadius.circular(100 * fem),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: const Color(0x142d2d42),
-                                          offset: Offset(0 * fem, 3 * fem),
-                                          blurRadius: 2.5 * fem,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Text(
-                                    // malev62 (83:1948)
-                                    'Male',
-                                    style: SafeGoogleFont(
-                                      'Inter',
-                                      fontSize: 14 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.4285714286 * ffem / fem,
-                                      color: const Color(0xff000000),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
+                Row(
+                children: <Widget>[
+                  addRadioButton(0, 'Male'),
+                  addRadioButton(1, 'Female'),
+                  SizedBox(width: 50 * fem,),
+                  SizedBox(
                         width: 80,
                         child: TextFormField(
-                          //controller: _controller,
+                          controller: _controllerAge,
                           keyboardType: TextInputType.number,
                           inputFormatters: <TextInputFormatter>[
                           FilteringTextInputFormatter.allow(RegExp(r'[0-9]')), FilteringTextInputFormatter.digitsOnly],
@@ -294,12 +270,14 @@ class _signUp extends State<signUp> {
                             ))
                       )
                       
-                    ],
-                  ),
-                ),
+                ],
+              ),
+                SizedBox(height: 15),
                 TextField(
-                // emailaddressXCA (83:1980)
-                
+                controller: _controllerCell,
+                 keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                 FilteringTextInputFormatter.allow(RegExp(r'[0-9]')), FilteringTextInputFormatter.digitsOnly],
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Cellphone number',
                   prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
@@ -360,49 +338,8 @@ class _signUp extends State<signUp> {
               SizedBox(
                 height: 15 * fem,
               ),
-
-                Container(
-                  // autogroupsvfq1h8 (SgKFPpAr58CihPBVKzSVfq)
-                  margin: EdgeInsets.fromLTRB(
-                      23 * fem, 0 * fem, 39 * fem, 16 * fem),
-                  width: double.infinity,
-                  height: 20 * fem,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        // checkboxkei (83:1972)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 6 * fem, 0 * fem),
-                        width: 20 * fem,
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xffd9d9d9)),
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(5 * fem),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0x142d2d42),
-                              offset: Offset(0 * fem, 3 * fem),
-                              blurRadius: 2.5 * fem,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Text(
-                        // ihavereadandunderstoodallpriva (83:1973)
-                        'I have read and understood all privacy policies',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.6666666667 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              _checkBox(),
+              
                 SizedBox(
                 width: double.infinity,
                 height: 45 * fem,

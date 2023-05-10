@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/signup.dart';
 import 'package:myapp/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'auth.dart';
 
@@ -22,8 +23,10 @@ class _signIn extends State<signIn> {
 
   Future<void> signInWithEmailAndPassword() async{
     try{
-      await Auth().signInWithEmailAndPassword(email: _controllerEmail.text, password: _controllerPassword.text);
+      await Auth().signInWithEmailAndPassword(email: _controllerEmail.text.trim(), password: _controllerPassword.text.trim());
        if(user != null){
+         SharedPreferences pref =await SharedPreferences.getInstance();
+        pref.setString("email", _controllerEmail.text.trim());
         Navigator.push(context
         , MaterialPageRoute(builder: (context) => Home()));
                    }
@@ -42,7 +45,7 @@ class _signIn extends State<signIn> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-      scrollBehavior: MyCustomScrollBehavior(),
+
       home: Scaffold(
           body: SingleChildScrollView(
         //width: double.infinity,

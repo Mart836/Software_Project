@@ -47,12 +47,11 @@ class Home extends StatelessWidget {
             ],
             backgroundColor: Colors.white,
             elevation: 0.5),
-        body: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
+        body: Container(
           child: Container(
             // home
             width: double.infinity,
-           height:800* fem,
+            //height: double.infinity,
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -68,6 +67,7 @@ class Home extends StatelessWidget {
                     width: 390 * fem,
                     height: 758.3 * fem,
                     child: SingleChildScrollView(
+                      physics:const ClampingScrollPhysics(),
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -285,7 +285,7 @@ class Home extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const More()));
+                More()));
             break;
           }
         },
@@ -309,4 +309,5 @@ class Home extends StatelessWidget {
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );
+  
 }

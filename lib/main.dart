@@ -1,15 +1,25 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/home.dart';
+import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
 import 'page-1/splash.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-Future<void> main() async{
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
-  runApp(const MyApp());
+  await Firebase.initializeApp();
+  SharedPreferences prefs =await SharedPreferences.getInstance();
+  
+  final email =prefs.getString("email");
+  print(email);
+  runApp( new MyApp(email));
 }
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final email;
+  const  MyApp(this.email);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
-        body:splash()),
-      );
+      home: email==null?signIn():splash());
   }
+  
 }
