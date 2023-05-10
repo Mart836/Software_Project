@@ -34,19 +34,11 @@ class Prayer extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-<<<<<<< HEAD
           backgroundColor: Colors.white,  elevation: 0.5),
       body: Container(
         // prayerpEz (1:64)
         width: double.infinity,
         // height: 844 * fem,
-=======
-          backgroundColor: Colors.white,),
-      body: Container(
-        // prayerpEz (1:64)
-        width: double.infinity,
-        height: 844 * fem,
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
@@ -54,13 +46,8 @@ class Prayer extends StatelessWidget {
           children: [
             Positioned(
               // autogroupucewL6r (SgK955YFcfQ3Hc7TbFuCEw)
-<<<<<<< HEAD
               left: 0,
               top:0,
-=======
-              left: 0 * fem,
-              top: 78 * fem,
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
               child: SizedBox(
                 width: 390 * fem,
                 height: 766 * fem,
@@ -376,25 +363,6 @@ class Prayer extends StatelessWidget {
                 ),
               ),
             ),
-<<<<<<< HEAD
-=======
-            Positioned(
-              // rectangle8rvz (53:159)
-              left: 0 * fem,
-              top: 77 * fem,
-              child: Align(
-                child: SizedBox(
-                  width: 390 * fem,
-                  height: 1 * fem,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                ),
-              ),
-            ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
           ],
         ),
       ),
@@ -405,21 +373,14 @@ class Prayer extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
-<<<<<<< HEAD
               spreadRadius: 0.2,
-=======
-              spreadRadius: 0.5,
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
             ),
           ],
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-<<<<<<< HEAD
           showSelectedLabels: false,
           showUnselectedLabels: false,
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         onTap: (int newIndex){
           switch(newIndex){
             case 0:
@@ -427,7 +388,7 @@ class Prayer extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const Home()));
+                Home()));
               break;
             case 2:
                Navigator.push(

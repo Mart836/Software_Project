@@ -83,7 +83,7 @@ class _MyAppState extends State<BibleStudy> {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const Home()));
+                Home()));
               break;
             case 1:
                Navigator.push(

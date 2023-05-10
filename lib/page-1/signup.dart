@@ -1,18 +1,37 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter/services.dart';
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
 
-import 'GroupRadioButton.dart';
+import 'auth.dart';
 
-// ignore: camel_case_types
-class signUp extends StatelessWidget {
-  const signUp({super.key});
 
+class signUp extends StatefulWidget{
+  const signUp({Key? key}) : super(key: key);
+  @override
+  State<signUp> createState() => _signUp();
+}
+
+class _signUp extends State<signUp> {
+  String? errorMessage = '';
+  bool isLogin = false;
+
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+
+  Future<void> createUserWithEmailAndPassword() async{
+    try{
+      await Auth().createUserWithEmailAndPassword(email: _controllerEmail.text, password: _controllerPassword.text);
+        Navigator.push(context
+        , MaterialPageRoute(builder: (context) => signIn()));
+    } on FirebaseAuthException catch(e){
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -58,17 +77,10 @@ class signUp extends StatelessWidget {
                     maxWidth: 197 * fem,
                   ),
                   child: Text(
-<<<<<<< HEAD
                     'Welcome, kindly fill in your details in order to sign up',
                     style: SafeGoogleFont(
                       'Inter',
                       fontSize: 14 * ffem,
-=======
-                    'Welcome, kindly fill in your details\nin order to sign up',
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 12 * ffem,
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                       fontWeight: FontWeight.w600,
                       height: 1.2125 * ffem / fem,
                       color: const Color(0xff51515b),
@@ -142,17 +154,13 @@ class signUp extends StatelessWidget {
               ),
               TextField(
                 // emailaddressXCA (83:1980)
-                
+                controller: _controllerEmail,
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Email address',
                   prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
                     child: Image.asset('assets/page-1/images/icon-envelope-closed.png',
                     width: 16 * fem,
                     height: 16 * fem,),),
-<<<<<<< HEAD
-=======
-                  //hintText: "Enter your email address",
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                   border: OutlineInputBorder(
                     borderRadius:BorderRadius.circular(10 * fem)),
                   ),
@@ -165,11 +173,7 @@ class signUp extends StatelessWidget {
                   ),
               ),
                 
-<<<<<<< HEAD
                 SizedBox( height: 15 * fem),
-=======
-                
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                 Container(
                   // autogroupey7qoEN (SgKDygs2GfbdgK8o5Vey7q)
                   margin:
@@ -277,7 +281,6 @@ class signUp extends StatelessWidget {
                           ],
                         ),
                       ),
-<<<<<<< HEAD
                       SizedBox(
                         width: 80,
                         child: TextFormField(
@@ -291,30 +294,6 @@ class signUp extends StatelessWidget {
                             ))
                       )
                       
-=======
-                      Container(
-                        // autogroupbe3m4CE (SgKED6eLxYeYCnKpi6bE3m)
-                        width: 124 * fem,
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff000000)),
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(10 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Age: ',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 14 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.4285714286 * ffem / fem,
-                              color: const Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                      ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     ],
                   ),
                 ),
@@ -322,11 +301,7 @@ class signUp extends StatelessWidget {
                 // emailaddressXCA (83:1980)
                 
                 obscureText: false,
-<<<<<<< HEAD
                   decoration: InputDecoration(labelText: 'Cellphone number',
-=======
-                  decoration: InputDecoration(labelText: '+264',
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                   prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
                     child: Image.asset('assets/page-1/images/icon-call.png',
                     width: 16 * fem,
@@ -348,7 +323,7 @@ class signUp extends StatelessWidget {
               ),
               TextField(
                 // passwordRwk (83:1988)
-                
+                controller: _controllerPassword,
                 obscureText: true,
                 decoration: InputDecoration(
                   
@@ -428,16 +403,14 @@ class signUp extends StatelessWidget {
                     ],
                   ),
                 ),
-<<<<<<< HEAD
                 SizedBox(
                 width: double.infinity,
                 height: 45 * fem,
                 child: ElevatedButton(
                 onPressed:() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Home()));
+                 if(!isLogin){
+                    createUserWithEmailAndPassword();
+                 }
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -456,40 +429,6 @@ class signUp extends StatelessWidget {
                     ),
                   ),)
               ),
-=======
-                Container(
-                  // autogroupkzsvbvE (SgKFYtk419G8NPDYxJKzsV)
-                  margin:
-                      EdgeInsets.fromLTRB(3 * fem, 0 * fem, 3 * fem, 13 * fem),
-                  width: double.infinity,
-                  height: 45 * fem,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xff000000)),
-                    color: const Color(0xff000000),
-                    borderRadius: BorderRadius.circular(10 * fem),
-                  ),
-                  child: Center(
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Home()));
-                      },
-                      child: Text(
-                        'S I G N U P',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                 Container(
                   // autogroupbvfm5Kc (SgKFgPXZYSdZmYHv3GbvFM)
                   margin:

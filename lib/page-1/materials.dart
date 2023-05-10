@@ -9,7 +9,6 @@ class Materials extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-<<<<<<< HEAD
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -140,56 +139,6 @@ class Materials extends StatelessWidget {
         ),
         /* Stack(
           children: [
-=======
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        // materialsgdU (71:296)
-        width: double.infinity,
-        height: 844 * fem,
-        decoration: const BoxDecoration(
-          color: Color(0xffffffff),
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              // autogroupxehq1fk (SgJnuaJc9V83QnRvJMXEHq)
-              left: 13 * fem,
-              top: 51 * fem,
-              child: SizedBox(
-                width: 108 * fem,
-                height: 21 * fem,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      // iconarrowleftJuk (71:298)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                      width: 20 * fem,
-                      height: 19 * fem,
-                      child: Image.asset(
-                        'assets/page-1/images/icon-arrow-left-dav.png',
-                        width: 20 * fem,
-                        height: 19 * fem,
-                      ),
-                    ),
-                    Text(
-                      // materialspt6 (71:297)
-                      'Materials',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 17 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2125 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
             Positioned(
               // browsewSv (71:307)
               left: 23 * fem,
@@ -311,132 +260,10 @@ class Materials extends StatelessWidget {
                 height: 53 * fem,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-<<<<<<< HEAD
                   children: const [
                     
                     
                     
-=======
-                  children: [
-                    Container(
-                      // autogroupu6dzVen (SgJoTUZ7qEkVeuUNskU6DZ)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 12 * fem, 0 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          15 * fem, 16 * fem, 17 * fem, 16 * fem),
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // rectangle48Zee (71:317)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 1 * fem, 6 * fem, 0 * fem),
-                            width: 20 * fem,
-                            height: 20 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/rectangle-48.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Text(
-                            // docstB8 (71:302)
-                            'Docs',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 17 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: const Color(0xff7d7a7a),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      // autogroupdcnpQvA (SgJobdzBeD3PoN7MM5DCnP)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 15 * fem, 0 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          13 * fem, 16 * fem, 9 * fem, 16 * fem),
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // rectangle50JEr (71:319)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                            width: 20 * fem,
-                            height: 20 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/rectangle-50.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Text(
-                            // videos2Rk (71:305)
-                            'Videos',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 17 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: const Color(0xff7d7a7a),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      // autogroupakc7mPL (SgJojPGH2tFsym2CCgAKc7)
-                      padding: EdgeInsets.fromLTRB(
-                          17 * fem, 16 * fem, 14 * fem, 16 * fem),
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // rectangle49H6n (71:318)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                            width: 20 * fem,
-                            height: 20 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/rectangle-49.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Text(
-                            // audioQSJ (71:306)
-                            'Audio',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 17 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: const Color(0xff7d7a7a),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                   ],
                 ),
               ),
@@ -630,14 +457,8 @@ class Materials extends StatelessWidget {
               ),
             ),
           ],
-<<<<<<< HEAD
         ),*/
       ),
       ));
-=======
-        ),
-      ),
-    );
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   }
 }

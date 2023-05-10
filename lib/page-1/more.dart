@@ -1,42 +1,25 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
-import 'package:flutter/rendering.dart';
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
-import 'package:myapp/page-1/discover.dart';
-import 'package:myapp/page-1/events.dart';
-import 'package:myapp/page-1/home.dart';
-import 'package:myapp/page-1/members.dart';
-import 'package:myapp/page-1/prayer.dart';
-<<<<<<< HEAD
-import 'package:myapp/page-1/support.dart';
 import 'package:myapp/utils.dart';
 
+import 'discover.dart';
+import 'events.dart';
+import 'home.dart';
 import 'materials.dart';
-import 'payments.dart';
+import 'members.dart';
+import 'prayer.dart';
 import 'settings.dart';
-
-class More extends StatelessWidget {
-  final double coverHeight = 80;
-  final double profileHeight = 80;
-  const More({super.key});
-=======
-import 'package:myapp/utils.dart';
+import 'support.dart';
 
 class More extends StatelessWidget {
   const More({super.key});
 
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return MaterialApp(
-<<<<<<< HEAD
-=======
       //scrollBehavior: MyCustomScrollBehavior(),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
       home: Scaffold(
         appBar: AppBar(
         title: Text('More', 
@@ -56,11 +39,7 @@ class More extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-<<<<<<< HEAD
           backgroundColor: Colors.white,  elevation: 0.5),
-=======
-          backgroundColor: Colors.white,),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 
           body: Container(
             // moregJA (27:131)
@@ -94,33 +73,11 @@ class More extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-<<<<<<< HEAD
-                              buildProfileImage(),
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 10 * fem),
-                                child: Text(
-                                'Aina Davel',
-=======
-                              SizedBox(
-                                // aina1iu4 (64:191)
-                                
-                                width: 70 * fem,
-                                height: 70 * fem,
-                                
-                                child: ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.circular(360 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/aina-1-djU.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
+                                buildProfileImage(),
                               Container(
                                 margin: EdgeInsets.symmetric(horizontal: 10 * fem),
                                 child: Text(
                                 'Aina Iiyehela',
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                                 style: SafeGoogleFont(
                                   'Inter',
                                   fontSize: 15 * ffem,
@@ -137,17 +94,12 @@ class More extends StatelessWidget {
                           ),
                           
                         ),
-<<<<<<< HEAD
                         ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true, physics: const ClampingScrollPhysics()
                         ,itemBuilder: (BuildContext context, int index){
-=======
-                        ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemBuilder: (BuildContext context, int index){
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                           
                           List<String> icons = const <String>['assets/page-1/images/icon-users.png', 'assets/page-1/images/icon-book.png',
                           'assets/page-1/images/icon-location.png','assets/page-1/images/icon-settings.png',
                           'assets/page-1/images/icon-credit-card.png', 'assets/page-1/images/icon-heart-U5t.png'];
-<<<<<<< HEAD
                           List<String> items = const <String>['Members', 'Materials', 'Events', 'Settings','Payments', 'Support'];
                           List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
                           'Sermons, live shows','Update profile', 'Tithes, donations', 'Contact us, about'];
@@ -176,24 +128,18 @@ class More extends StatelessWidget {
                                 MaterialPageRoute(
                                   builder: (context) => const Settings()));
                                 break;
-                                case 4:
+                                /*case 4:
                                 Navigator.push(context,
                                 MaterialPageRoute(
                                   builder: (context) => const Payments()));
-                                break;  
+                                break;  */
                                 case 5:
                                 Navigator.push(context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Support()));
+                                  builder: (context) => Support()));
                                 break;
                               }
                             },
-=======
-                          List<String> items = const <String>['Members', 'Materials', 'Events', 'Payments', 'Support'];
-                          List<String> captions = const <String>['Discover people', 'Documents, videos, audio',
-                          'Sermons, live shows', 'Tithes, donations', 'Contact us, about'];
-                          return ListTile(
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                             leading: Image.asset(icons[index], width: 20, height: 20,),
                             title: Text(items[index], 
                             style: SafeGoogleFont(
@@ -211,11 +157,7 @@ class More extends StatelessWidget {
                               
                             )),
                           );},
-<<<<<<< HEAD
                             itemCount: 6
-=======
-                            itemCount: 5
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                             ),
                         
               ])),
@@ -240,11 +182,8 @@ class More extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-<<<<<<< HEAD
           showSelectedLabels: false,
           showUnselectedLabels: false,
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         onTap: (int newIndex){
           switch(newIndex){
             case 0:
@@ -252,7 +191,7 @@ class More extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const Home()));
+                Home()));
               break;
             case 1:
                Navigator.push(
@@ -282,7 +221,6 @@ class More extends StatelessWidget {
         ],
         backgroundColor: Colors.white,
       ),
-<<<<<<< HEAD
       
       ),
       
@@ -290,16 +228,8 @@ class More extends StatelessWidget {
   }
   // sets image from online url
   Widget buildProfileImage() => CircleAvatar(
-    radius: profileHeight/2,
+    radius: 35,
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );
-=======
-
-      ),
-
-      
-    ));
-  }
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 }

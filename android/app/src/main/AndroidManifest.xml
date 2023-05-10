@@ -4,11 +4,8 @@
         android:label="test"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-<<<<<<< HEAD
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyAI2ujX88e380n5WWn7FU7VPpamjkqrtcI"/>
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,10 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

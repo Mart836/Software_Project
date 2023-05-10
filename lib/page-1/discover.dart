@@ -33,11 +33,7 @@ class Discover extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
-<<<<<<< HEAD
           backgroundColor: Colors.white,  elevation: 0.5),
-=======
-          backgroundColor: Colors.white,),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
       body: Container(
         // discover4ea (43:4)
         padding: EdgeInsets.fromLTRB(13 * fem, 41 * fem, 23 * fem, 44 * fem),
@@ -282,21 +278,14 @@ class Discover extends StatelessWidget {
             
             BoxShadow(
               color: Colors.black,
-<<<<<<< HEAD
               spreadRadius: 0.2,
-=======
-              spreadRadius: 0.5,
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
             ),
           ],
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-<<<<<<< HEAD
           showSelectedLabels: false,
           showUnselectedLabels: false,
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         onTap: (int newIndex){
           switch(newIndex){
             case 0:
@@ -304,7 +293,7 @@ class Discover extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                const Home()));
+                Home()));
               break;
             case 1:
                Navigator.push(

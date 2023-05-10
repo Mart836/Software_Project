@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "509899777164",
-    "project_id": "betteryou-4c509",
-    "storage_bucket": "betteryou-4c509.appspot.com"
+    "project_number": "907667058439",
+    "project_id": "betteryou-d2f08",
+    "storage_bucket": "betteryou-d2f08.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:509899777164:android:8b04851b1e616a857587a9",
+        "mobilesdk_app_id": "1:907667058439:android:a2afc84d9605dc367ddfa2",
         "android_client_info": {
           "package_name": "com.example.test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "509899777164-6feb37e297pr1o30dattur34srk1jpm9.apps.googleusercontent.com",
+          "client_id": "907667058439-h6aafshqq0s6obp2gllo934qpjf1j5ti.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDPAc-7zpaGlfsCuFYCwu4KHzLmQECtH7A"
+          "current_key": "AIzaSyDqiaKSUZQVZJrp5WiyC9kgy_3AUlloMGQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "509899777164-6feb37e297pr1o30dattur34srk1jpm9.apps.googleusercontent.com",
+              "client_id": "907667058439-h6aafshqq0s6obp2gllo934qpjf1j5ti.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

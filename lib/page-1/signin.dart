@@ -1,13 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:myapp/page-1/home.dart';
-=======
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
 import 'package:myapp/page-1/signup.dart';
 import 'package:myapp/utils.dart';
 
-class signIn extends StatelessWidget {
-  const signIn({super.key});
+import 'auth.dart';
+
+class signIn extends StatefulWidget{
+  const signIn({Key? key}) : super(key: key);
+  @override
+  State<signIn> createState() => _signIn();
+
+}
+class _signIn extends State<signIn> {
+  String? errorMessage = '';
+  bool isLogin = true;
+
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+   final User? user = Auth().currentUser;
+
+  Future<void> signInWithEmailAndPassword() async{
+    try{
+      await Auth().signInWithEmailAndPassword(email: _controllerEmail.text, password: _controllerPassword.text);
+       if(user != null){
+        Navigator.push(context
+        , MaterialPageRoute(builder: (context) => Home()));
+                   }
+    } on FirebaseAuthException catch(e){
+      setState(() {
+        errorMessage = e.message;
+        print(errorMessage);
+      });
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -121,9 +148,10 @@ class signIn extends StatelessWidget {
                   ],
                 ),
               ),
+              //Widget _
               TextField(
                 // emailaddressXCA (83:1980)
-                
+                controller: _controllerEmail,
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Email address',
                   prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
@@ -149,7 +177,7 @@ class signIn extends StatelessWidget {
 
               TextField(
                 // passwordRwk (83:1988)
-                
+                controller: _controllerPassword,
                 obscureText: true,
                 decoration: InputDecoration(
                   
@@ -201,7 +229,6 @@ class signIn extends StatelessWidget {
                   ),
                 ),
               ),
-<<<<<<< HEAD
 
               // login button
               SizedBox(
@@ -209,10 +236,8 @@ class signIn extends StatelessWidget {
                 height: 45 * fem,
                 child: ElevatedButton(
                 onPressed:() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Home()));
+                   signInWithEmailAndPassword();
+                  
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -221,21 +246,6 @@ class signIn extends StatelessWidget {
                   )
                 ),
                 child: Text(
-=======
-              Container(
-                // autogroupdmqdoL2 (SgKHDG99L54wr3uY4qdmqd)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 6 * fem, 16 * fem),
-                width: 345 * fem,
-                height: 45 * fem,
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xff000000)),
-                  color: const Color(0xff000000),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Center(
-                  child: Text(
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     'L O G I N',
                     style: SafeGoogleFont(
                       'Inter',
@@ -244,12 +254,7 @@ class signIn extends StatelessWidget {
                       height: 1.2125 * ffem / fem,
                       color: const Color(0xffffffff),
                     ),
-<<<<<<< HEAD
                   ),)
-=======
-                  ),
-                ),
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
               ),
               Container(
                 // autogroupffakf7L (SgKHQ6ASDj3gyinx5aFfAK)

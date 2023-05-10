@@ -9,7 +9,6 @@ class Notifications extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-<<<<<<< HEAD
     return MaterialApp(
       home: Scaffold(
          appBar: AppBar(
@@ -37,11 +36,6 @@ class Notifications extends StatelessWidget {
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
         body: Container(
-=======
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
         // notificationsApW (111:27)
         width: double.infinity,
         decoration: const BoxDecoration(
@@ -59,71 +53,6 @@ class Notifications extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-<<<<<<< HEAD
-=======
-                    // autogroupjrp7S1L (SgJuPtVaEigE43CyCfJRp7)
-                    margin: EdgeInsets.fromLTRB(
-                        18 * fem, 0 * fem, 26 * fem, 13 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // iconarrowleftAT8 (111:29)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                          width: 20 * fem,
-                          height: 19 * fem,
-                          child: TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: Image.asset(
-                                'assets/page-1/images/icon-arrow-left-Udc.png',
-                                width: 20 * fem,
-                                height: 19 * fem,
-                              )),
-                        ),
-                        Container(
-                          // notificationcenterGm4 (111:28)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 142 * fem, 0 * fem),
-                          child: Text(
-                            'Notification center',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 17 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: const Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // iconreloadaFx (111:37)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                          width: 19 * fem,
-                          height: 20 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-reload.png',
-                            width: 19 * fem,
-                            height: 20 * fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // rectangle74skr (111:31)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 4 * fem, 13.5 * fem),
-                    width: 386 * fem,
-                    height: 0.5 * fem,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                    ),
-                  ),
-                  Container(
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
                     // autogroupjjn7Qkn (SgJubxynPFtD5uGn4ZJJN7)
                     margin: EdgeInsets.fromLTRB(
                         10 * fem, 0 * fem, 22 * fem, 0 * fem),
@@ -556,10 +485,6 @@ class Notifications extends StatelessWidget {
           ],
         ),
       ),
-<<<<<<< HEAD
     ));
-=======
-    );
->>>>>>> bbf1ea1a1edf8fb2c5fbe95e392d05352857f3ca
   }
 }
