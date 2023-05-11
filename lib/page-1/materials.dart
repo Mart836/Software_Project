@@ -41,7 +41,7 @@ class Materials extends StatelessWidget {
             Container(
               margin: EdgeInsets.all( 20 * fem),
               padding: EdgeInsets.fromLTRB( 15 * fem, 16 * fem, 17 * fem, 16 * fem),
-              height: 70,
+              height: 60,
               decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xff000000)),
                 color: const Color(0xffffffff),
@@ -73,7 +73,7 @@ class Materials extends StatelessWidget {
             Container(
               margin: EdgeInsets.fromLTRB( 0 * fem, 0 * fem, 15 * fem, 0 * fem),
               padding: EdgeInsets.fromLTRB( 13 * fem, 16 * fem, 9 * fem, 16 * fem),
-              height: 70 * fem,
+              height: 60 * fem,
               decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xff000000)),
                 color: const Color(0xffffffff),
@@ -105,7 +105,7 @@ class Materials extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(17 * fem, 16 * fem, 14 * fem, 16 * fem),
-              height: 70 * fem,
+              height: 60 * fem,
               decoration: BoxDecoration(
               border: Border.all(color: const Color(0xff000000)),
               color: const Color(0xffffffff),

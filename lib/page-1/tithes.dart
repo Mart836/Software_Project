@@ -9,62 +9,32 @@ class Tithes extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
+    return MaterialApp(
+      home : Scaffold(
+         appBar: AppBar(
+        title: Text('Tithe payment',
+        style: SafeGoogleFont(
+          'Inter',
+          fontSize: 17 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        )),
+        leading:TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            'assets/page-1/images/icon-arrow-left-DX4.png',
+            width: 18 * fem,
+            height: 18 * fem,
+          )),
+           backgroundColor: Colors.white,  elevation: 0.5),
         // tithesxbp (83:1794)
-        padding: EdgeInsets.fromLTRB(5 * fem, 49 * fem, 0 * fem, 82 * fem),
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          color: Color(0xffffffff),
-        ),
-        child: Column(
+        body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // autogroupuucsgGv (SgJktxzEs3pLko39rbUUCs)
-              margin:
-                  EdgeInsets.fromLTRB(14 * fem, 0 * fem, 220 * fem, 24 * fem),
-              width: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // iconarrowleftREW (83:1837)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                    width: 20 * fem,
-                    height: 19 * fem,
-                    child: Image.asset(
-                      'assets/page-1/images/icon-arrow-left-Zbt.png',
-                      width: 20 * fem,
-                      height: 19 * fem,
-                    ),
-                  ),
-                  Text(
-                    // tithepaymentKan (83:1836)
-                    'Tithe payment',
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 17 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2125 * ffem / fem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // rectangle25SvJ (83:1835)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 24.5 * fem),
-              width: 390 * fem,
-              height: 0.5 * fem,
-              decoration: const BoxDecoration(
-                color: Color(0xffd9d9d9),
-              ),
-            ),
+            SizedBox(height: 15* fem),
             Container(
               // totalduen5000xdk (83:1840)
               margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 0 * fem, 21 * fem),
@@ -79,6 +49,7 @@ class Tithes extends StatelessWidget {
                 ),
               ),
             ),
+          
             Container(
               // thisisforyouranualchurchdistri (83:1841)
               margin: EdgeInsets.fromLTRB(15 * fem, 0 * fem, 0 * fem, 21 * fem),
@@ -285,7 +256,7 @@ class Tithes extends StatelessWidget {
                         Container(
                           // expiresxsx (83:1806)
                           margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 24 * fem, 0 * fem),
+                              0 * fem, 0 * fem, 20 * fem, 0 * fem),
                           width: 152 * fem,
                           height: double.infinity,
                           child: Column(
@@ -392,8 +363,7 @@ class Tithes extends StatelessWidget {
                                       // icon8xn (83:1822)
                                       opacity: 0.5,
                                       child: Container(
-                                        margin: EdgeInsets.fromLTRB(0 * fem,
-                                            1 * fem, 13 * fem, 0 * fem),
+                                       
                                         width: 13 * fem,
                                         height: 15 * fem,
                                         child: Image.asset(

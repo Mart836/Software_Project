@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/payments.dart';
 import 'package:myapp/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -58,7 +59,7 @@ class _More extends State<More>{
             width: 18 * fem,
             height: 18 * fem,
           )),
-          backgroundColor: Colors.white,  elevation: 0.5),
+           backgroundColor: Colors.white,  elevation: 0.5),
 
           body: Container(
             // moregJA (27:131)
@@ -143,14 +144,16 @@ class _More extends State<More>{
                                   builder: (context) => const Events()));
                                 break;    
                                 case 3:
-                                 SharedPreferences pref = await SharedPreferences.getInstance();
-                                 pref.remove("email");
-                                break;
-                                /*case 4:
+                                 Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const settings()));
+                                break; 
+                                
+                                case 4:
                                 Navigator.push(context,
                                 MaterialPageRoute(
                                   builder: (context) => const Payments()));
-                                break;  */
+                                break; 
                                 case 5:
                                 Navigator.push(context,
                                 MaterialPageRoute(

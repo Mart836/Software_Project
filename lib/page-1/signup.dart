@@ -82,7 +82,12 @@ class _signUp extends State<signUp> {
   
 
   Future<void> createUserWithEmailAndPassword() async{
+   
     try{
+       showDialog(context: context, builder: (context){
+      return Center(
+        child: CircularProgressIndicator());
+    });
       if(checkedValue){
         await Auth().createUserWithEmailAndPassword(email: _controllerEmail.text.toLowerCase().trim(), password: _controllerPassword.text.trim());
         addUserData(_controllerFirstName.text.trim(), _controllerLastName.text.trim(),
@@ -94,9 +99,8 @@ class _signUp extends State<signUp> {
         myC = Colors.red;
         };  
     }on FirebaseAuthException catch(e){
-      setState(() {
-        errorMessage = e.message;
-      });
+      print(e.message);
+      Navigator.of(context).pop();
     }
   }
   Future<void> addUserData(String nFirst, String nLast, String nEmail, String nGender, int nCell, int nAge) async{

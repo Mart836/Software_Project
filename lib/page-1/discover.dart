@@ -34,19 +34,19 @@ class Discover extends StatelessWidget {
             height: 18 * fem,
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
-      body: Container(
+      body: SingleChildScrollView(
         // discover4ea (43:4)
         padding: EdgeInsets.fromLTRB(13 * fem, 41 * fem, 23 * fem, 44 * fem),
-        width: double.infinity,
-        decoration: const BoxDecoration(
+        //width: double.infinity,
+        /*decoration: const BoxDecoration(
           color: Color(0xffffffff),
-        ),
+        ),*/
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               // autogroup8gl3Ab8 (SgK63AbNHW4JBfgPr68GL3)
-              margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 26 * fem),
+              margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 20 * fem),
               width: 344 * fem,
               height: 53 * fem,
               child: Stack(

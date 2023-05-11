@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/auth.dart';
+import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+class settings extends StatelessWidget {
+  const settings({super.key});
 
+ Future<void> signOut() async{
+  await Auth().signOut();
+ }
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -29,6 +35,31 @@ class Settings extends StatelessWidget {
             width: 18 * fem,
             height: 18 * fem,
           )),
+          actions: [
+            TextButton(onPressed:() async {
+              showDialog(context: context, builder: (context){
+                return Center(
+                  child: CircularProgressIndicator());
+                  });
+                  
+               signOut();
+                Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const signIn()));
+              
+            
+              
+            }, child:Text('Sign Out', 
+            style: SafeGoogleFont(
+          'Inter',
+          fontSize: 16 * ffem,
+          fontWeight: FontWeight.w600,
+          height: 1.2125 * ffem / fem,
+          color:const Color(0xff000000),
+        ))
+          
+            )
+          ],
           backgroundColor: Colors.white,  elevation: 0.5),
         body: Container(
         // settingsGm4 (83:26)
@@ -53,10 +84,10 @@ class Settings extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     buildProfileImage(),
-                    Container(
+                    SizedBox(
+                      height: 20 * fem,
                       // editiqL (83:1853)
-                      margin: EdgeInsets.fromLTRB(
-                          10 * fem, 0 * fem, 0 * fem, 38 * fem),
+                      
                       child: Text(
                         'Edit',
                         style: SafeGoogleFont(
@@ -256,7 +287,7 @@ class Settings extends StatelessWidget {
   }
   // sets user image from an online url
   Widget buildProfileImage() => CircleAvatar(
-    radius: 50,
+    radius: 75,
     backgroundColor: Colors.grey.shade800,
     backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
   );

@@ -19,21 +19,29 @@ class _signIn extends State<signIn> {
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-   final User? user = Auth().currentUser;
+  final User? user = Auth().currentUser;
 
   Future<void> signInWithEmailAndPassword() async{
+   showDialog(context: context, builder: (context){
+      return Center(
+        child: CircularProgressIndicator());
+    });
+
     try{
+       
       await Auth().signInWithEmailAndPassword(email: _controllerEmail.text.trim(), password: _controllerPassword.text.trim());
+       Navigator.push(context
+        , MaterialPageRoute(builder: (context) => Home()));
        if(user != null){
          SharedPreferences pref =await SharedPreferences.getInstance();
-        pref.setString("email", _controllerEmail.text.trim());
-        Navigator.push(context
-        , MaterialPageRoute(builder: (context) => Home()));
-                   }
+         pref.setString("email", _controllerEmail.text.trim());
+       
+      }
     } on FirebaseAuthException catch(e){
       setState(() {
         errorMessage = e.message;
         print(errorMessage);
+        Navigator.of(context).pop();
       });
     }
   }

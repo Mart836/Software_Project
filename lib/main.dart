@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/auth.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
     return MaterialApp(
       title: 'Flutter',
       debugShowCheckedModeBanner: false,
