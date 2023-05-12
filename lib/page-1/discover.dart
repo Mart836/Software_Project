@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/bible_study.dart';
 import 'package:myapp/page-1/more.dart';
 import 'package:myapp/page-1/prayer.dart';
 import 'package:myapp/utils.dart';
@@ -35,6 +36,7 @@ class Discover extends StatelessWidget {
           )),
           backgroundColor: Colors.white,  elevation: 0.5),
       body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
         // discover4ea (43:4)
         padding: EdgeInsets.fromLTRB(13 * fem, 41 * fem, 23 * fem, 44 * fem),
         //width: double.infinity,
@@ -214,7 +216,14 @@ class Discover extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
+            new GestureDetector(
+              onTap: (){
+                 Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const BibleStudy()));
+              },
+               child:Container(
               // autogroup8uvjR58 (SgK6w4Ga5PLapsb9z58uvj)
               margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 39 * fem),
               width: 344 * fem,
@@ -241,6 +250,8 @@ class Discover extends StatelessWidget {
                 ),
               ),
             ),
+            ),
+           
             Container(
               // autogroupv3n359g (SgK738vmntFR91bUNnv3n3)
               margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 0 * fem),

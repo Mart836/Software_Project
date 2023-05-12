@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/payments.dart';
+import 'package:myapp/read%20data/get_user_name.dart';
 import 'package:myapp/utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'discover.dart';
 import 'events.dart';
@@ -22,6 +22,8 @@ class More extends StatefulWidget {
 }
 
 class _More extends State<More>{
+  set name(String name) {}
+
 
   @override
   void initState(){
@@ -51,7 +53,6 @@ class _More extends State<More>{
         )),
         leading:TextButton(
           onPressed: () {
-            getCurrentUser();
             Navigator.pop(context);
           },
           child: Image.asset(
@@ -94,20 +95,30 @@ class _More extends State<More>{
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                                 buildProfileImage(),
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 10 * fem),
-                                child: Text(
-                                "Aina Davel",
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: 15 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2125 * ffem / fem,
-                                  color: const Color(0xff000000),
-                                ),
+                              // --------------------------------------------->>>>>>>>>>>
+                              FutureBuilder(future: firebaseDocument(),
+                                builder: (context, snapshot){
+                                   var data;
+                                  if(snapshot.hasData){
+                                     data = snapshot.data![1].toString();
+                                  }
+                                  else{
+                                    data = "";
+                                  }
+                                    print(data);
+                                    return Container(
+                                      margin: EdgeInsets.only(left: 7 * fem),
+                                      child:Text(data, 
+                                    style: SafeGoogleFont(
+                                      'Inter',
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.2125 * ffem / fem,
+                                      color:const Color(0xff000000),)));
+                                  
+                                }
                                 
-                              ),
-                              ),
+                              )
                               
                             ],
                           )
@@ -146,7 +157,7 @@ class _More extends State<More>{
                                 case 3:
                                  Navigator.push(context,
                                 MaterialPageRoute(
-                                  builder: (context) => const settings()));
+                                  builder: (context) => settings()));
                                 break; 
                                 
                                 case 4:
@@ -255,17 +266,26 @@ class _More extends State<More>{
   );
 }
 FirebaseAuth _auth = FirebaseAuth.instance;
-  getCurrentUser() async {
+
+
+  Future<List> firebaseDocument() async{
     final user = await _auth.currentUser!;
-    var userId = user.uid;
-    // Similarly we can get email as well
-    //final uemail = user.email;
-    //print(userId);
- 
-  }
-  firebaseDocument() async{
-
-    var variable = await FirebaseFirestore.instance.collection('users').doc('WIUSSnpAKzALO68Zooh8').get();
-     print(variable['firstName']);
-
+    DocumentSnapshot? documentSnapshot;
+    
+    try{
+      
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).get().then((value){
+        documentSnapshot = value;
+      });
+       var firstName = documentSnapshot!['firstName'];
+       var lastName =  documentSnapshot!['lastName'];
+       var username = firstName + " " + lastName;
+       List<String>? properties = <String>[username, firstName, lastName];
+       return properties;
+       
+    }on FirebaseException {
+      print('No internet connection');
+      return <String>['Loading'];
+    }
+    
 }

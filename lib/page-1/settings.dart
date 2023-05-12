@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:myapp/page-1/auth.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class settings extends StatelessWidget {
-  const settings({super.key});
+  settings({super.key});
 
  Future<void> signOut() async{
   await Auth().signOut();
  }
+ final  TextEditingController _controllerFirstName = new  TextEditingController();
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+    _controllerFirstName.text = "Siiiuu";
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -64,26 +67,17 @@ class settings extends StatelessWidget {
         body: Container(
         // settingsGm4 (83:26)
         width: double.infinity,
-        height: 844 * fem,
+        height: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
-        child: Stack(
-          children: [
-
-            Positioned(
-              // autogroupacgbc86 (SgJaxvCkHQyBKXUjBWACGB)
-              left: 0 * fem,
-              top: 0 * fem,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(
-                    18 * fem, 25.5 * fem, 21 * fem, 169 * fem),
-                width: 390 * fem,
-                height: 770.5 * fem,
-                child: Column(
+        child: Column(children: [
+          Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    SizedBox(height: 15 * fem,),
                     buildProfileImage(),
+                    SizedBox(height: 10 * fem),
                     SizedBox(
                       height: 20 * fem,
                       // editiqL (83:1853)
@@ -98,189 +92,129 @@ class settings extends StatelessWidget {
                           color: const Color(0xff000000),
                         ),
                       ),
-                    ),
-                    Container(
-                      // firstnamebeE (83:1855)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 270 * fem, 10 * fem),
-                      child: Text(
-                        'Firstname',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroupnhnb7Mg (SgJaB2MYvZz3Q3dTWhNHNB)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 0 * fem, 16 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          20 * fem, 12 * fem, 20 * fem, 13 * fem),
-                      width: 348 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Text(
-                        'Aina',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.4285714286 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // lastnameYht (83:1857)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 271 * fem, 10 * fem),
-                      child: Text(
-                        'Lastname',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroup8zgbfXc (SgJaKwGNHfp5tDmsHv8zGb)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 0 * fem, 10 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          20 * fem, 12 * fem, 20 * fem, 13 * fem),
-                      width: 348 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Text(
-                        'Davel',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.4285714286 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // emailaddressJqU (83:1859)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 248 * fem, 10 * fem),
-                      child: Text(
-                        'Email address',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroupcuumPrv (SgJaT1tuQg77KK86mAcuuM)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 0 * fem, 16 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          20 * fem, 12 * fem, 20 * fem, 13 * fem),
-                      width: 348 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff7d7a7a)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Text(
-                        'aina123@gmail.com',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.4285714286 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // phonenumber3wU (83:1934)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 226 * fem, 9 * fem),
-                      child: Text(
-                        'Phone number',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 12 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroupdem9YNS (SgJaZRstG1Ug16uir4deM9)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 30 * fem),
-                      padding: EdgeInsets.fromLTRB(
-                          23 * fem, 14 * fem, 23 * fem, 11 * fem),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff7d7a7a)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Text(
-                        '+264 81 345 6576',
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.4285714286 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroupmb6bPtr (SgJag1XFgG5bsiazn3mB6B)
-                      margin: EdgeInsets.fromLTRB(
-                          3 * fem, 0 * fem, 3 * fem, 0 * fem),
-                      width: double.infinity,
-                      height: 45 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xff000000),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'U P D A T E',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: const Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+          )]
         ),
+        Container(
+               padding: EdgeInsets.fromLTRB(
+                    18 * fem, 25.5 * fem, 21 * fem, 169 * fem),
+                width: 390 * fem,
+                
+              child: Column(children: [
+                TextField(
+                  controller: _controllerFirstName,
+                        obscureText: false,
+                        decoration: InputDecoration(labelText: "Firstname",
+                          border: OutlineInputBorder(
+                          borderRadius:BorderRadius.circular(10 * fem)
+                        ),
+                        ),
+                        style: SafeGoogleFont(
+                          'Inter',
+                          fontSize: 14 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.2125 * ffem / fem,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15 * fem,
+                      ),
+                TextField(
+                // emailaddressXCA (83:1980)
+                
+                
+                obscureText: false,
+                  decoration: InputDecoration(labelText: 'Lastname',
+                  
+                  border: OutlineInputBorder(
+                    borderRadius:BorderRadius.circular(10 * fem)),
+                  ),
+                  style: SafeGoogleFont(
+                    'Inter',
+                    fontSize: 14 * ffem,
+                    fontWeight: FontWeight.w400,
+                    height: 1.2125 * ffem / fem,
+                    color: const Color(0xff000000),
+                  ),
+              ),
+              SizedBox(
+                height: 15 * fem,
+              ),
+              TextField(
+                // emailaddressXCA (83:1980)
+               // controller: _controllerEmail,
+                obscureText: false,
+                  decoration: InputDecoration(labelText: 'Email address',
+                  prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
+                    child: Image.asset('assets/page-1/images/icon-envelope-closed.png',
+                    width: 16 * fem,
+                    height: 16 * fem,),),
+                  border: OutlineInputBorder(
+                    borderRadius:BorderRadius.circular(10 * fem)),
+                  ),
+                  style: SafeGoogleFont(
+                    'Inter',
+                    fontSize: 14 * ffem,
+                    fontWeight: FontWeight.w400,
+                    height: 1.2125 * ffem / fem,
+                    color: const Color(0xff000000),
+                  ),
+              ),
+               SizedBox(
+                height: 15 * fem,
+              ),
+                TextField(
+                //controller: _controllerCell,
+                 keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                 FilteringTextInputFormatter.allow(RegExp(r'[0-9]')), FilteringTextInputFormatter.digitsOnly],
+                obscureText: false,
+                  decoration: InputDecoration(labelText: 'Cellphone number',
+                  prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
+                    child: Image.asset('assets/page-1/images/icon-call.png',
+                    width: 16 * fem,
+                    height: 16 * fem,),),
+                  //hintText: "Enter your email address",
+                  border: OutlineInputBorder(
+                    borderRadius:BorderRadius.circular(10 * fem)),
+                  ),
+                  style: SafeGoogleFont(
+                    'Inter',
+                    fontSize: 14 * ffem,
+                    fontWeight: FontWeight.w400,
+                    height: 1.2125 * ffem / fem,
+                    color: const Color(0xff000000),
+                  ),
+              ),
+              SizedBox(height: 15 * fem,),
+               SizedBox(
+                width: double.infinity,
+                height: 45 * fem,
+                child: ElevatedButton(
+                onPressed:() {
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(10 * fem))
+                  )
+                ),
+                child: Text(
+                    'U P D A T E',
+                    style: SafeGoogleFont(
+                      'Inter',
+                      fontSize: 15 * ffem,
+                      fontWeight: FontWeight.w600,
+                      height: 1.2125 * ffem / fem,
+                      color: const Color(0xffffffff),
+                    ),
+                  ),)
+              )
+              ]),
+          ),
+           
+        ],)
+        
       ),
       )
     );

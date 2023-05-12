@@ -22,7 +22,7 @@ class _splash extends State<splash> {
       Navigator.push(
         context,
         MaterialPageRoute(
-        builder: (context) => const signIn()));
+        builder: (context) => Home()));
       
    });
     double baseWidth = 390;

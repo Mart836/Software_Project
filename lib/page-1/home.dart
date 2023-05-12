@@ -47,56 +47,17 @@ class Home extends StatelessWidget {
             ],
             backgroundColor: Colors.white,
             elevation: 0.5),
-        body: Container(
-          child: Container(
-            // home
-            width: double.infinity,
-            //height: double.infinity,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  // autogroupkj7hKug (SgKBmvCaxjrTX15Jvpkj7h)
-                  left: 0 * fem,
-                  top: 10,
-                  child: SizedBox(
-                    //padding: EdgeInsets.fromLTRB(
-                     //   0 * fem, 14 * fem, 0 * fem, 0 * fem),
-                    width: 390 * fem,
-                    height: 758.3 * fem,
-                    child: SingleChildScrollView(
-                      physics:const ClampingScrollPhysics(),
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // autogroupqtutdfU (SgKBBwBDBWqwSZQCGpqtUT)
-                          margin: EdgeInsets.fromLTRB(
-                              11 * fem, 0 * fem, 15 * fem, 10 * fem),
-                          width: double.infinity,
-                          height: 177 * fem,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                // rectangle4a4v (1:52)
-                                left: 0 * fem,
-                                top: 100 * fem,
-                                child: Align(
-                                  child: SizedBox(
-                                    width: 364 * fem,
-                                    height: 900 * fem,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(20 * fem),
-                                        color: const Color(0xffd9d9d9),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+        body: SingleChildScrollView(
+          physics: ClampingScrollPhysics(),
+          child: Column(
+            children: [
+            Container(
+              margin: EdgeInsets.fromLTRB(
+                10 * fem, 15 * fem, 10 * fem, 0 * fem),
+                 width: double.infinity,
+                  height: 177 * fem,
+                  child: Stack(
+                    children: [
                               Positioned(
                                 // rectangle4rHL (27:135)
                                 left: 0 * fem,
@@ -140,14 +101,21 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(
+                        new GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const BibleStudy()));
+                          },
+                          child:Container(
                           // autogroupcas5TY2 (SgKBMgPyPCporrzsHVCas5)
                           margin: EdgeInsets.fromLTRB(
-                              11 * fem, 0 * fem, 15 * fem, 22 * fem),
+                              10 * fem, 15 * fem, 10 * fem, 0 * fem),
                           width: double.infinity,
                           height: 150 * fem,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20 * fem),
+                            borderRadius: BorderRadius.circular(10 * fem),
                             image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage(
@@ -173,10 +141,18 @@ class Home extends StatelessWidget {
                             ),
                           )),
                         ),
-                        Container(
+                        ),
+                        new GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Calendar()));
+                          },
+                          child:Container(
                           // autogroupgwvqXGz (SgKBUm2WWD7qHxM6kjgWVq)
                           margin: EdgeInsets.fromLTRB(
-                              11 * fem, 0 * fem, 15 * fem, 22 * fem),
+                              10 * fem, 15 * fem, 10 * fem, 0 * fem),
                           width: double.infinity,
                           height: 150 * fem,
                           decoration: BoxDecoration(
@@ -207,10 +183,18 @@ class Home extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
+                        ),
+                        new GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Events()));
+                          },
+                          child: Container(
                           // autogroupasepZDg (SgKBb1M6ndG2nvF4zYaSeP)
                           margin: EdgeInsets.fromLTRB(
-                              11 * fem, 0 * fem, 15 * fem, 1733 * fem),
+                              10 * fem, 15 * fem, 10 * fem, 15 * fem),
                           width: double.infinity,
                           height: 150 * fem,
                           decoration: BoxDecoration(
@@ -240,14 +224,9 @@ class Home extends StatelessWidget {
                             ),
                           )),
                         ),
+                        )
                         
-                      ],
-                    )),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          ]),
         ),
         bottomNavigationBar: Container(
         decoration: const BoxDecoration(

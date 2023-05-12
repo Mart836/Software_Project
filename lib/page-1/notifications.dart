@@ -38,6 +38,7 @@ class Notifications extends StatelessWidget {
         body: Container(
         // notificationsApW (111:27)
         width: double.infinity,
+        height: 600,
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
@@ -47,7 +48,7 @@ class Notifications extends StatelessWidget {
             Container(
               // autogroupqcjdhZY (SgJxgNrWEBgRzE4dW3qCjd)
               padding:
-                  EdgeInsets.fromLTRB(0 * fem, 37 * fem, 0 * fem, 11 * fem),
+                  EdgeInsets.fromLTRB(0 * fem, 20 * fem, 0 * fem, 11 * fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,14 +58,14 @@ class Notifications extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(
                         10 * fem, 0 * fem, 22 * fem, 0 * fem),
                     width: double.infinity,
-                    height: 40 * fem,
+                    height: 60 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           // aina3X4i (111:71)
-                          width: 40 * fem,
-                          height: 40 * fem,
+                          width:  60  * fem,
+                          height: 60 * fem,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(360 * fem),
                             child: Image.asset(
@@ -84,7 +85,7 @@ class Notifications extends StatelessWidget {
                               Container(
                                 // autogroupgb6kPci (SgJunTgJ95QDqvNtP7gb6K)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 169 * fem, 0 * fem),
+                                    0 * fem, 0 * fem, 110 * fem, 0 * fem),
                                 height: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +95,7 @@ class Notifications extends StatelessWidget {
                                       'Sermons',
                                       style: SafeGoogleFont(
                                         'Inter',
-                                        fontSize: 12 * ffem,
+                                        fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125 * ffem / fem,
                                         color: const Color(0xff000000),
@@ -105,7 +106,7 @@ class Notifications extends StatelessWidget {
                                       'New upcoming sermon...',
                                       style: SafeGoogleFont(
                                         'Inter',
-                                        fontSize: 10 * ffem,
+                                        fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125 * ffem / fem,
                                         color: const Color(0xff7d7a7a),
@@ -159,14 +160,14 @@ class Notifications extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(
                         10 * fem, 0 * fem, 22 * fem, 17 * fem),
                     width: double.infinity,
-                    height: 40 * fem,
+                    height: 60 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           // autogroup5dvktrJ (SgJvhbpRBqukPKU3NG5DvK)
-                          width: 40 * fem,
-                          height: double.infinity,
+                          width: 60 * fem,
+                          height: 60 * fem,
                           decoration: BoxDecoration(
                             color: const Color(0xff000000),
                             borderRadius: BorderRadius.circular(30 * fem),
@@ -183,7 +184,7 @@ class Notifications extends StatelessWidget {
                               'B.Y',
                               style: SafeGoogleFont(
                                 'Inter',
-                                fontSize: 8 * ffem,
+                                fontSize: 10 * ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2125 * ffem / fem,
                                 color: const Color(0xffffffff),
@@ -302,14 +303,14 @@ class Notifications extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(
                         10 * fem, 0 * fem, 15 * fem, 8 * fem),
                     width: double.infinity,
-                    height: 40 * fem,
+                    height: 60 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           // aina278i (111:42)
-                          width: 40 * fem,
-                          height: 40 * fem,
+                          width: 60 * fem,
+                          height: 60 * fem,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(360 * fem),
                             child: Image.asset(
@@ -329,7 +330,7 @@ class Notifications extends StatelessWidget {
                               Container(
                                 // autogroupmmwy9bC (SgJwmpXkAdUgbibFyiMMwy)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 161 * fem, 0 * fem),
+                                    0 * fem, 0 * fem, 110, 0 * fem),
                                 height: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -401,14 +402,14 @@ class Notifications extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(
                         10 * fem, 0 * fem, 15 * fem, 0 * fem),
                     width: double.infinity,
-                    height: 40 * fem,
+                    height: 60 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           // rectangle78A8v (119:83)
-                          width: 40 * fem,
-                          height: 40 * fem,
+                          width: 60 * fem,
+                          height:60 * fem,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(360 * fem),
                             child: Image.asset(

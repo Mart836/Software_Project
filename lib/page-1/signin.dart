@@ -248,7 +248,6 @@ class _signIn extends State<signIn> {
                 child: ElevatedButton(
                 onPressed:() {
                    signInWithEmailAndPassword();
-                  
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.black),

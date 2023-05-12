@@ -89,9 +89,12 @@ class _signUp extends State<signUp> {
         child: CircularProgressIndicator());
     });
       if(checkedValue){
+        // add to users
         await Auth().createUserWithEmailAndPassword(email: _controllerEmail.text.toLowerCase().trim(), password: _controllerPassword.text.trim());
+        // add to the cloud database
         addUserData(_controllerFirstName.text.trim(), _controllerLastName.text.trim(),
-         _controllerEmail.text.toLowerCase().trim(), select, int.parse(_controllerCell.text.trim()), int.parse(_controllerAge.text.trim()));
+         _controllerEmail.text.toLowerCase().trim(), select, int.parse(_controllerCell.text.trim()), int.parse(_controllerAge.text.trim()),
+);
         Navigator.push(context
         , MaterialPageRoute(builder: (context) => signIn()));
       }
@@ -104,7 +107,8 @@ class _signUp extends State<signUp> {
     }
   }
   Future<void> addUserData(String nFirst, String nLast, String nEmail, String nGender, int nCell, int nAge) async{
-    await FirebaseFirestore.instance.collection('users').add({
+    var user = await FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
       'firstName': nFirst,
       'lastName': nLast,
       'email': nEmail,
