@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/bible_study.dart';
@@ -42,7 +43,18 @@ class Home extends StatelessWidget {
           }, child:Image.asset('assets/page-1/images/icon-bell.png', width: 18 * fem, height: 18 * fem) ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-            child: buildProfileImage(),
+            child:                         FutureBuilder(future: firebaseDocument(),
+                                builder: (context, snapshot){
+                                   String image = '';
+                                  if(snapshot.hasData){
+                                     image= snapshot.data.toString();
+                                     
+                                  }
+
+                                    return buildProfileImage(image);
+                                
+   } ),
+            
             ),
             ],
             backgroundColor: Colors.white,
@@ -283,10 +295,28 @@ class Home extends StatelessWidget {
     ));
   }
   // sets user image from an online url
-  Widget buildProfileImage() => CircleAvatar(
+  Widget buildProfileImage(String url) => CircleAvatar(
     radius: 25,
     backgroundColor: Colors.grey.shade800,
-    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+    backgroundImage: NetworkImage(url),
   );
   
+}
+Future<String> firebaseDocument() async{
+    FirebaseAuth _auth = FirebaseAuth.instance;
+    final user = await _auth.currentUser!;
+    DocumentSnapshot? documentSnapshot;
+    
+    try{
+      
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).get().then((value){
+        documentSnapshot = value;
+      });
+       var photoUrl = documentSnapshot!['dP'];
+       return photoUrl;
+       
+    }on FirebaseException {
+      print('No internet connection');
+      return '';
+    }
 }

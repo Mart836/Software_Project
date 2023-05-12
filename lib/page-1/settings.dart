@@ -1,23 +1,39 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/page-1/auth.dart';
 import 'package:myapp/page-1/signin.dart';
 import 'package:myapp/utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class settings extends StatelessWidget {
-  settings({super.key});
+class settings extends StatefulWidget {
+  settings({Key? key}) : super(key: key);
+  @override
+    State<settings> createState() => _settings();
+}
+class _settings extends State<settings>{
 
+  @override
+  void initState(){
+    firebaseDocument2();
+    setState(() {
+      
+    });
+    super.initState();
+}
  Future<void> signOut() async{
   await Auth().signOut();
  }
  final  TextEditingController _controllerFirstName = new  TextEditingController();
+ final  TextEditingController _controllerlastName = new  TextEditingController();
+ final  TextEditingController _controllerEmail = new  TextEditingController();
+ final  TextEditingController _controllerCell = new  TextEditingController();
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    _controllerFirstName.text = "Siiiuu";
+   
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -65,18 +81,41 @@ class settings extends StatelessWidget {
           ],
           backgroundColor: Colors.white,  elevation: 0.5),
         body: Container(
+          
         // settingsGm4 (83:26)
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
-        child: Column(children: [
+        child: Container(
+          child:FutureBuilder(future: firebaseDocument2(),
+          builder: (context, snapshot){
+            var data;
+            String test = 'testing';
+            String image = '';
+          if(snapshot.hasData){
+            test = 'tesed!!!!!!!';
+            data = snapshot.data;
+            _controllerFirstName.text = data[0];
+            _controllerlastName.text = data[1];
+            image = data[2];
+            _controllerEmail.text = data[3];
+            _controllerCell.text = "0" + data[4];
+          }
+          else{
+            data = "";
+                                    
+          }
+          print(test);
+          return Column(children: [
           Column(
+            
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    
                     SizedBox(height: 15 * fem,),
-                    buildProfileImage(),
+                    buildProfileImage(image),
                     SizedBox(height: 10 * fem),
                     SizedBox(
                       height: 20 * fem,
@@ -121,7 +160,7 @@ class settings extends StatelessWidget {
                       ),
                 TextField(
                 // emailaddressXCA (83:1980)
-                
+                controller: _controllerlastName,
                 
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Lastname',
@@ -142,7 +181,7 @@ class settings extends StatelessWidget {
               ),
               TextField(
                 // emailaddressXCA (83:1980)
-               // controller: _controllerEmail,
+               controller: _controllerEmail,
                 obscureText: false,
                   decoration: InputDecoration(labelText: 'Email address',
                   prefixIcon: Padding(padding: const EdgeInsets.all(15.0),
@@ -164,7 +203,7 @@ class settings extends StatelessWidget {
                 height: 15 * fem,
               ),
                 TextField(
-                //controller: _controllerCell,
+                controller: _controllerCell,
                  keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
                  FilteringTextInputFormatter.allow(RegExp(r'[0-9]')), FilteringTextInputFormatter.digitsOnly],
@@ -213,16 +252,46 @@ class settings extends StatelessWidget {
               ]),
           ),
            
-        ],)
+        ],);
+
+                                }
+                                
+                              )
+        )
         
-      ),
       )
-    );
+    ));
   }
   // sets user image from an online url
-  Widget buildProfileImage() => CircleAvatar(
+  Widget buildProfileImage(String url) => CircleAvatar(
     radius: 75,
     backgroundColor: Colors.grey.shade800,
-    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+    backgroundImage: NetworkImage(url),
   );
 }
+  Future<List> firebaseDocument2() async{
+    FirebaseAuth _auth = FirebaseAuth.instance;
+    final user = await _auth.currentUser!;
+    DocumentSnapshot? documentSnapshot;
+    
+    try{
+      
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).get().then((value){
+        documentSnapshot = value;
+      });
+       var firstName = documentSnapshot!['firstName'];
+       var lastName =  documentSnapshot!['lastName'];
+       var photoUrl = documentSnapshot!['dP'];
+       var email = documentSnapshot!['email'];
+       var cell = documentSnapshot!['cellNum'];
+       List<String>? properties = <String>[firstName, lastName, photoUrl, email,  cell.toString()];
+       print('siiuuyyyyyyyyyyyyyyyyyyyyy');
+       return properties;
+       
+    }on FirebaseException {
+      print('No internet connectiondfghjkjhgfdsdfghjklkjhgfdfghjkjhgfghjkjhg');
+      return <String>['Loading'];
+    }
+    
+}
+

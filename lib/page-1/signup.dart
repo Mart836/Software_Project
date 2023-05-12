@@ -114,6 +114,7 @@ class _signUp extends State<signUp> {
       'email': nEmail,
       'gender': nGender,
       'age': nAge,
+      'dP': '',
       'cellNum': nCell,
       'verified': false
     });

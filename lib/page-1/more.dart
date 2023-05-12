@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/payments.dart';
-import 'package:myapp/read%20data/get_user_name.dart';
 import 'package:myapp/utils.dart';
 
 import 'discover.dart';
@@ -94,31 +93,39 @@ class _More extends State<More>{
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                                buildProfileImage(),
+                               
                               // --------------------------------------------->>>>>>>>>>>
                               FutureBuilder(future: firebaseDocument(),
                                 builder: (context, snapshot){
                                    var data;
+                                   String image = '';
+                                   var username = "";
                                   if(snapshot.hasData){
-                                     data = snapshot.data![1].toString();
+                                     data= snapshot.data;
+                                     username = data[0];
+                                     image = data[3];
                                   }
                                   else{
                                     data = "";
                                   }
-                                    print(data);
-                                    return Container(
+                                 
+                                    return Row(
+                                      children: [
+                                         buildProfileImage(image),
+                                        Container(
                                       margin: EdgeInsets.only(left: 7 * fem),
-                                      child:Text(data, 
+                                      child:Text(username, 
                                     style: SafeGoogleFont(
                                       'Inter',
                                       fontSize: 15 * ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2125 * ffem / fem,
-                                      color:const Color(0xff000000),)));
+                                      color:const Color(0xff000000),)))
                                   
-                                }
+                                      ],
+                                    );
                                 
-                              )
+   } )
                               
                             ],
                           )
@@ -259,16 +266,14 @@ class _More extends State<More>{
     ));
   }
   // sets image from online url
-  Widget buildProfileImage() => CircleAvatar(
+  Widget buildProfileImage(String url) => CircleAvatar(
     radius: 35,
     backgroundColor: Colors.grey.shade800,
-    backgroundImage: const NetworkImage('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+    backgroundImage: NetworkImage(url),
   );
 }
-FirebaseAuth _auth = FirebaseAuth.instance;
-
-
   Future<List> firebaseDocument() async{
+    FirebaseAuth _auth = FirebaseAuth.instance;
     final user = await _auth.currentUser!;
     DocumentSnapshot? documentSnapshot;
     
@@ -280,7 +285,9 @@ FirebaseAuth _auth = FirebaseAuth.instance;
        var firstName = documentSnapshot!['firstName'];
        var lastName =  documentSnapshot!['lastName'];
        var username = firstName + " " + lastName;
-       List<String>? properties = <String>[username, firstName, lastName];
+       var photoUrl = documentSnapshot!['dP'];
+       var email = documentSnapshot!['email'];
+       List<String>? properties = <String>[username, firstName, lastName, photoUrl, email];
        return properties;
        
     }on FirebaseException {
